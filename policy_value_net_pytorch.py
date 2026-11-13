@@ -48,7 +48,7 @@ class Net(nn.Module):
         # action policy layers
         x_act = F.relu(self.act_conv1(x))
         x_act = x_act.view(-1, 4*self.board_width*self.board_height)
-        x_act = F.log_softmax(self.act_fc1(x_act))
+        x_act = F.log_softmax(self.act_fc1(x_act),dim=1)
         # state value layers
         x_val = F.relu(self.val_conv1(x))
         x_val = x_val.view(-1, 2*self.board_width*self.board_height)
@@ -115,8 +115,9 @@ class PolicyValueNet():
         act_probs = zip(legal_positions, act_probs[legal_positions])
         return act_probs, value
 
-    def train_step(self, state_batch, mcts_probs, winner_batch, lr):
-        """perform a training step"""
+    def train_step(self, state_batch, mcts_probs, winner_batch, lr,
+                   return_loss_components=False):
+        """Return loss and entropy, optionally followed by policy and value losses."""
         # wrap in Variable
         if self.use_gpu:
             state_batch = Variable(torch.FloatTensor(state_batch).cuda())
@@ -146,9 +147,10 @@ class PolicyValueNet():
         entropy = -torch.mean(
                 torch.sum(torch.exp(log_act_probs) * log_act_probs, 1)
                 )
-        return loss.data[0], entropy.data[0]
-        #for pytorch version >= 0.5 please use the following line instead.
-        #return loss.item(), entropy.item()
+        metrics = loss.item(), entropy.item()
+        if return_loss_components:
+            return metrics + (policy_loss.item(), value_loss.item())
+        return metrics
 
     def get_policy_param(self):
         net_params = self.policy_value_net.state_dict()

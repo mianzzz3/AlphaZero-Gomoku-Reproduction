@@ -1,4 +1,7 @@
 ## AlphaZero-Gomoku
+
+本仓库的 PyTorch GPU 训练配置、日志和模型见[复现实验记录](RESULTS.md)。上游项目为 [junxiaosong/AlphaZero_Gomoku](https://github.com/junxiaosong/AlphaZero_Gomoku)，沿用 MIT 许可。
+
 This is an implementation of the AlphaZero algorithm for playing the simple board game Gomoku (also called Gobang or Five in a Row) from pure self-play training. The game Gomoku is much simpler than Go or chess, so that we can focus on the training scheme of AlphaZero and obtain a pretty good AI model on a single PC in a few hours. 
 
 References:  

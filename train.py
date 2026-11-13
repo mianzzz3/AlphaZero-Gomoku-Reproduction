@@ -12,7 +12,8 @@ from collections import defaultdict, deque
 from game import Board, Game
 from mcts_pure import MCTSPlayer as MCTS_Pure
 from mcts_alphaZero import MCTSPlayer
-from policy_value_net import PolicyValueNet  # Theano and Lasagne
+# from policy_value_net import PolicyValueNet
+from policy_value_net_pytorch import PolicyValueNet
 # from policy_value_net_pytorch import PolicyValueNet  # Pytorch
 # from policy_value_net_tensorflow import PolicyValueNet # Tensorflow
 # from policy_value_net_keras import PolicyValueNet # Keras
@@ -21,9 +22,9 @@ from policy_value_net import PolicyValueNet  # Theano and Lasagne
 class TrainPipeline():
     def __init__(self, init_model=None):
         # params of the board and the game
-        self.board_width = 6
-        self.board_height = 6
-        self.n_in_row = 4
+        self.board_width = 10
+        self.board_height = 10
+        self.n_in_row = 5
         self.board = Board(width=self.board_width,
                            height=self.board_height,
                            n_in_row=self.n_in_row)
@@ -32,7 +33,7 @@ class TrainPipeline():
         self.learn_rate = 2e-3
         self.lr_multiplier = 1.0  # adaptively adjust the learning rate based on KL
         self.temp = 1.0  # the temperature param
-        self.n_playout = 400  # num of simulations for each move
+        self.n_playout = 400 # num of simulations for each move
         self.c_puct = 5
         self.buffer_size = 10000
         self.batch_size = 512  # mini-batch size for training
@@ -41,7 +42,7 @@ class TrainPipeline():
         self.epochs = 5  # num of train_steps for each update
         self.kl_targ = 0.02
         self.check_freq = 50
-        self.game_batch_num = 1500
+        self.game_batch_num = 3000
         self.best_win_ratio = 0.0
         # num of simulations used for the pure mcts, which is used as
         # the opponent to evaluate the trained policy
@@ -50,11 +51,13 @@ class TrainPipeline():
             # start training from an initial policy-value net
             self.policy_value_net = PolicyValueNet(self.board_width,
                                                    self.board_height,
-                                                   model_file=init_model)
+                                                   model_file=init_model,
+                                                   use_gpu=True)
         else:
             # start training from a new policy-value net
             self.policy_value_net = PolicyValueNet(self.board_width,
-                                                   self.board_height)
+                                                   self.board_height,
+                                                   use_gpu=True)
         self.mcts_player = MCTSPlayer(self.policy_value_net.policy_value_fn,
                                       c_puct=self.c_puct,
                                       n_playout=self.n_playout,
@@ -101,11 +104,12 @@ class TrainPipeline():
         winner_batch = [data[2] for data in mini_batch]
         old_probs, old_v = self.policy_value_net.policy_value(state_batch)
         for i in range(self.epochs):
-            loss, entropy = self.policy_value_net.train_step(
+            loss, entropy, policy_loss, value_loss = self.policy_value_net.train_step(
                     state_batch,
                     mcts_probs_batch,
                     winner_batch,
-                    self.learn_rate*self.lr_multiplier)
+                    self.learn_rate*self.lr_multiplier,
+                    return_loss_components=True)
             new_probs, new_v = self.policy_value_net.policy_value(state_batch)
             kl = np.mean(np.sum(old_probs * (
                     np.log(old_probs + 1e-10) - np.log(new_probs + 1e-10)),
@@ -130,13 +134,17 @@ class TrainPipeline():
                "loss:{},"
                "entropy:{},"
                "explained_var_old:{:.3f},"
-               "explained_var_new:{:.3f}"
+               "explained_var_new:{:.3f},"
+               "policy_loss:{},"
+               "value_loss:{}"
                ).format(kl,
                         self.lr_multiplier,
                         loss,
                         entropy,
                         explained_var_old,
-                        explained_var_new))
+                        explained_var_new,
+                        policy_loss,
+                        value_loss))
         return loss, entropy
 
     def policy_evaluate(self, n_games=10):

@@ -1,0 +1,1014 @@
+batch i:2504, episode_len:62
+kl:0.00039,lr_multiplier:11.391,loss:6.451193809509277,entropy:4.413620471954346,explained_var_old:0.000,explained_var_new:0.000
+batch i:2505, episode_len:41
+kl:0.00049,lr_multiplier:11.391,loss:6.400952339172363,entropy:4.412998199462891,explained_var_old:0.000,explained_var_new:0.000
+batch i:2506, episode_len:33
+kl:0.00047,lr_multiplier:11.391,loss:6.475106239318848,entropy:4.414730548858643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2507, episode_len:27
+kl:0.00078,lr_multiplier:11.391,loss:6.491116046905518,entropy:4.418087482452393,explained_var_old:0.000,explained_var_new:0.000
+batch i:2508, episode_len:31
+kl:0.00056,lr_multiplier:11.391,loss:6.416159629821777,entropy:4.419987201690674,explained_var_old:0.000,explained_var_new:0.000
+batch i:2509, episode_len:29
+kl:0.00094,lr_multiplier:11.391,loss:6.406069755554199,entropy:4.420302867889404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2510, episode_len:15
+kl:0.00075,lr_multiplier:11.391,loss:6.618847846984863,entropy:4.4205546379089355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2511, episode_len:39
+kl:0.00101,lr_multiplier:11.391,loss:6.456732749938965,entropy:4.421207427978516,explained_var_old:0.000,explained_var_new:0.000
+batch i:2512, episode_len:40
+kl:0.00040,lr_multiplier:11.391,loss:6.46912145614624,entropy:4.421912670135498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2513, episode_len:27
+kl:0.00062,lr_multiplier:11.391,loss:6.463174343109131,entropy:4.422611713409424,explained_var_old:0.000,explained_var_new:0.000
+batch i:2514, episode_len:13
+kl:0.00074,lr_multiplier:11.391,loss:6.329955101013184,entropy:4.423213481903076,explained_var_old:0.000,explained_var_new:0.000
+batch i:2515, episode_len:45
+kl:0.00076,lr_multiplier:11.391,loss:6.351685523986816,entropy:4.423076152801514,explained_var_old:0.000,explained_var_new:0.000
+batch i:2516, episode_len:30
+kl:0.00067,lr_multiplier:11.391,loss:6.38301944732666,entropy:4.423633098602295,explained_var_old:0.000,explained_var_new:0.000
+batch i:2517, episode_len:32
+kl:0.00054,lr_multiplier:11.391,loss:6.435659885406494,entropy:4.425086498260498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2518, episode_len:64
+kl:0.00094,lr_multiplier:11.391,loss:6.422642707824707,entropy:4.425136089324951,explained_var_old:0.000,explained_var_new:0.000
+batch i:2519, episode_len:29
+kl:0.00085,lr_multiplier:11.391,loss:6.3571600914001465,entropy:4.424126148223877,explained_var_old:0.000,explained_var_new:0.000
+batch i:2520, episode_len:28
+kl:0.00053,lr_multiplier:11.391,loss:6.598599433898926,entropy:4.423840045928955,explained_var_old:0.000,explained_var_new:0.000
+batch i:2521, episode_len:43
+kl:0.00059,lr_multiplier:11.391,loss:6.40857458114624,entropy:4.424872875213623,explained_var_old:0.000,explained_var_new:0.000
+batch i:2522, episode_len:34
+kl:0.00089,lr_multiplier:11.391,loss:6.5466084480285645,entropy:4.427279949188232,explained_var_old:0.000,explained_var_new:0.000
+batch i:2523, episode_len:41
+kl:0.00068,lr_multiplier:11.391,loss:6.494729995727539,entropy:4.4280009269714355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2524, episode_len:18
+kl:0.00071,lr_multiplier:11.391,loss:6.5067267417907715,entropy:4.42771577835083,explained_var_old:0.000,explained_var_new:0.000
+batch i:2525, episode_len:43
+kl:0.00083,lr_multiplier:11.391,loss:6.354172229766846,entropy:4.427836894989014,explained_var_old:0.000,explained_var_new:0.000
+batch i:2526, episode_len:44
+kl:0.00058,lr_multiplier:11.391,loss:6.385930061340332,entropy:4.428878307342529,explained_var_old:0.000,explained_var_new:0.000
+batch i:2527, episode_len:27
+kl:0.00079,lr_multiplier:11.391,loss:6.554262638092041,entropy:4.429592132568359,explained_var_old:0.000,explained_var_new:0.000
+batch i:2528, episode_len:27
+kl:0.00076,lr_multiplier:11.391,loss:6.453808784484863,entropy:4.4290690422058105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2529, episode_len:36
+kl:0.00066,lr_multiplier:11.391,loss:6.529575347900391,entropy:4.42836332321167,explained_var_old:0.000,explained_var_new:0.000
+batch i:2530, episode_len:35
+kl:0.00065,lr_multiplier:11.391,loss:6.472000598907471,entropy:4.427901744842529,explained_var_old:0.000,explained_var_new:0.000
+batch i:2531, episode_len:24
+kl:0.00061,lr_multiplier:11.391,loss:6.472055435180664,entropy:4.428901195526123,explained_var_old:0.000,explained_var_new:0.000
+batch i:2532, episode_len:47
+kl:0.00082,lr_multiplier:11.391,loss:6.442387580871582,entropy:4.430168628692627,explained_var_old:0.000,explained_var_new:0.000
+batch i:2533, episode_len:35
+kl:0.00079,lr_multiplier:11.391,loss:6.654992580413818,entropy:4.430328845977783,explained_var_old:0.000,explained_var_new:0.000
+batch i:2534, episode_len:29
+kl:0.00054,lr_multiplier:11.391,loss:6.231545448303223,entropy:4.430282115936279,explained_var_old:0.000,explained_var_new:0.000
+batch i:2535, episode_len:30
+kl:0.00103,lr_multiplier:11.391,loss:6.526608467102051,entropy:4.431273937225342,explained_var_old:0.000,explained_var_new:0.000
+batch i:2536, episode_len:33
+kl:0.00046,lr_multiplier:11.391,loss:6.514156341552734,entropy:4.432327747344971,explained_var_old:0.000,explained_var_new:0.000
+batch i:2537, episode_len:31
+kl:0.00084,lr_multiplier:11.391,loss:6.459070205688477,entropy:4.434299945831299,explained_var_old:0.000,explained_var_new:0.000
+batch i:2538, episode_len:35
+kl:0.00096,lr_multiplier:11.391,loss:6.310053825378418,entropy:4.4346232414245605,explained_var_old:0.000,explained_var_new:0.000
+batch i:2539, episode_len:22
+kl:0.00051,lr_multiplier:11.391,loss:6.340362548828125,entropy:4.433773517608643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2540, episode_len:28
+kl:0.00082,lr_multiplier:11.391,loss:6.394791603088379,entropy:4.433150768280029,explained_var_old:0.000,explained_var_new:0.000
+batch i:2541, episode_len:33
+kl:0.00080,lr_multiplier:11.391,loss:6.400973320007324,entropy:4.432017803192139,explained_var_old:0.000,explained_var_new:0.000
+batch i:2542, episode_len:20
+kl:0.00067,lr_multiplier:11.391,loss:6.429235935211182,entropy:4.431457042694092,explained_var_old:0.000,explained_var_new:0.000
+batch i:2543, episode_len:37
+kl:0.00072,lr_multiplier:11.391,loss:6.573720932006836,entropy:4.431735515594482,explained_var_old:0.000,explained_var_new:0.000
+batch i:2544, episode_len:31
+kl:0.00084,lr_multiplier:11.391,loss:6.285327434539795,entropy:4.431949138641357,explained_var_old:0.000,explained_var_new:0.000
+batch i:2545, episode_len:36
+kl:0.00082,lr_multiplier:11.391,loss:6.3780293464660645,entropy:4.432284832000732,explained_var_old:0.000,explained_var_new:0.000
+batch i:2546, episode_len:23
+kl:0.00088,lr_multiplier:11.391,loss:6.532311916351318,entropy:4.431824207305908,explained_var_old:0.000,explained_var_new:0.000
+batch i:2547, episode_len:22
+kl:0.00049,lr_multiplier:11.391,loss:6.55589485168457,entropy:4.43062162399292,explained_var_old:0.000,explained_var_new:0.000
+batch i:2548, episode_len:41
+kl:0.00042,lr_multiplier:11.391,loss:6.460045337677002,entropy:4.429378509521484,explained_var_old:0.000,explained_var_new:0.000
+batch i:2549, episode_len:23
+kl:0.00048,lr_multiplier:11.391,loss:6.259440898895264,entropy:4.428966999053955,explained_var_old:0.000,explained_var_new:0.000
+batch i:2550, episode_len:41
+kl:0.00041,lr_multiplier:11.391,loss:6.414166450500488,entropy:4.429478168487549,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2550
+num_playouts:1000, win: 2, lose: 8, tie:0
+batch i:2551, episode_len:51
+kl:0.00032,lr_multiplier:11.391,loss:6.368673324584961,entropy:4.430283069610596,explained_var_old:0.000,explained_var_new:0.000
+batch i:2552, episode_len:40
+kl:0.00037,lr_multiplier:11.391,loss:6.375772476196289,entropy:4.430846691131592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2553, episode_len:41
+kl:0.00044,lr_multiplier:11.391,loss:6.425180435180664,entropy:4.430823802947998,explained_var_old:0.000,explained_var_new:0.000
+batch i:2554, episode_len:46
+kl:0.00037,lr_multiplier:11.391,loss:6.493142127990723,entropy:4.431243419647217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2555, episode_len:31
+kl:0.00039,lr_multiplier:11.391,loss:6.426293849945068,entropy:4.431926727294922,explained_var_old:0.000,explained_var_new:0.000
+batch i:2556, episode_len:28
+kl:0.00051,lr_multiplier:11.391,loss:6.2820940017700195,entropy:4.4324951171875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2557, episode_len:38
+kl:0.00044,lr_multiplier:11.391,loss:6.420352935791016,entropy:4.431586742401123,explained_var_old:0.000,explained_var_new:0.000
+batch i:2558, episode_len:47
+kl:0.00040,lr_multiplier:11.391,loss:6.478799819946289,entropy:4.430476665496826,explained_var_old:0.000,explained_var_new:0.000
+batch i:2559, episode_len:25
+kl:0.00031,lr_multiplier:11.391,loss:6.542036056518555,entropy:4.430861949920654,explained_var_old:0.000,explained_var_new:0.000
+batch i:2560, episode_len:27
+kl:0.00039,lr_multiplier:11.391,loss:6.572906494140625,entropy:4.431895732879639,explained_var_old:0.000,explained_var_new:0.000
+batch i:2561, episode_len:38
+kl:0.00049,lr_multiplier:11.391,loss:6.440350532531738,entropy:4.432621479034424,explained_var_old:0.000,explained_var_new:0.000
+batch i:2562, episode_len:24
+kl:0.00071,lr_multiplier:11.391,loss:6.54810905456543,entropy:4.432677745819092,explained_var_old:0.000,explained_var_new:0.000
+batch i:2563, episode_len:33
+kl:0.00047,lr_multiplier:11.391,loss:6.46573543548584,entropy:4.4308857917785645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2564, episode_len:54
+kl:0.00041,lr_multiplier:11.391,loss:6.45014762878418,entropy:4.430138111114502,explained_var_old:0.000,explained_var_new:0.000
+batch i:2565, episode_len:34
+kl:0.00057,lr_multiplier:11.391,loss:6.5156097412109375,entropy:4.430938243865967,explained_var_old:0.000,explained_var_new:0.000
+batch i:2566, episode_len:29
+kl:0.00058,lr_multiplier:11.391,loss:5.472347259521484,entropy:4.430556774139404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2567, episode_len:25
+kl:0.00044,lr_multiplier:11.391,loss:5.419472694396973,entropy:4.430408954620361,explained_var_old:0.000,explained_var_new:0.000
+batch i:2568, episode_len:39
+kl:0.00036,lr_multiplier:11.391,loss:5.417209625244141,entropy:4.431549549102783,explained_var_old:0.000,explained_var_new:0.000
+batch i:2569, episode_len:31
+kl:0.00039,lr_multiplier:11.391,loss:5.414851188659668,entropy:4.432541370391846,explained_var_old:0.000,explained_var_new:0.000
+batch i:2570, episode_len:21
+kl:0.00048,lr_multiplier:11.391,loss:5.4171223640441895,entropy:4.432461261749268,explained_var_old:0.000,explained_var_new:0.000
+batch i:2571, episode_len:46
+kl:0.00042,lr_multiplier:11.391,loss:5.419795989990234,entropy:4.432457447052002,explained_var_old:0.000,explained_var_new:0.000
+batch i:2572, episode_len:36
+kl:0.00062,lr_multiplier:11.391,loss:5.414422512054443,entropy:4.432651042938232,explained_var_old:0.000,explained_var_new:0.000
+batch i:2573, episode_len:35
+kl:0.00059,lr_multiplier:11.391,loss:5.418419361114502,entropy:4.432563304901123,explained_var_old:0.000,explained_var_new:0.000
+batch i:2574, episode_len:44
+kl:0.00053,lr_multiplier:11.391,loss:5.4144721031188965,entropy:4.431786060333252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2575, episode_len:37
+kl:0.00059,lr_multiplier:11.391,loss:5.4109649658203125,entropy:4.4305419921875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2576, episode_len:29
+kl:0.00052,lr_multiplier:11.391,loss:5.411989212036133,entropy:4.4298014640808105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2577, episode_len:38
+kl:0.00058,lr_multiplier:11.391,loss:5.4131364822387695,entropy:4.429538249969482,explained_var_old:0.000,explained_var_new:0.000
+batch i:2578, episode_len:47
+kl:0.00074,lr_multiplier:11.391,loss:5.416835308074951,entropy:4.4304585456848145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2579, episode_len:21
+kl:0.00064,lr_multiplier:11.391,loss:5.414659023284912,entropy:4.431087970733643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2580, episode_len:35
+kl:0.00052,lr_multiplier:11.391,loss:5.411038398742676,entropy:4.430568695068359,explained_var_old:0.000,explained_var_new:0.000
+batch i:2581, episode_len:26
+kl:0.00083,lr_multiplier:11.391,loss:5.408988952636719,entropy:4.4289469718933105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2582, episode_len:17
+kl:0.00062,lr_multiplier:11.391,loss:5.415735244750977,entropy:4.4264750480651855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2583, episode_len:28
+kl:0.00047,lr_multiplier:11.391,loss:5.409327030181885,entropy:4.424792766571045,explained_var_old:0.000,explained_var_new:0.000
+batch i:2584, episode_len:21
+kl:0.00086,lr_multiplier:11.391,loss:5.409363746643066,entropy:4.425952434539795,explained_var_old:0.000,explained_var_new:0.000
+batch i:2585, episode_len:27
+kl:0.00093,lr_multiplier:11.391,loss:5.416884422302246,entropy:4.428612232208252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2586, episode_len:37
+kl:0.00070,lr_multiplier:11.391,loss:5.408830165863037,entropy:4.429126262664795,explained_var_old:0.000,explained_var_new:0.000
+batch i:2587, episode_len:31
+kl:0.00060,lr_multiplier:11.391,loss:5.414074420928955,entropy:4.427684307098389,explained_var_old:0.000,explained_var_new:0.000
+batch i:2588, episode_len:40
+kl:0.00045,lr_multiplier:11.391,loss:5.4131975173950195,entropy:4.427207946777344,explained_var_old:0.000,explained_var_new:0.000
+batch i:2589, episode_len:40
+kl:0.00057,lr_multiplier:11.391,loss:5.407236576080322,entropy:4.427135944366455,explained_var_old:0.000,explained_var_new:0.000
+batch i:2590, episode_len:29
+kl:0.00084,lr_multiplier:11.391,loss:5.409691333770752,entropy:4.426158905029297,explained_var_old:0.000,explained_var_new:0.000
+batch i:2591, episode_len:28
+kl:0.00062,lr_multiplier:11.391,loss:5.4125075340271,entropy:4.425072193145752,explained_var_old:0.000,explained_var_new:0.000
+batch i:2592, episode_len:35
+kl:0.00062,lr_multiplier:11.391,loss:5.413050651550293,entropy:4.425346851348877,explained_var_old:0.000,explained_var_new:0.000
+batch i:2593, episode_len:49
+kl:0.00060,lr_multiplier:11.391,loss:5.411034107208252,entropy:4.426205158233643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2594, episode_len:45
+kl:0.00066,lr_multiplier:11.391,loss:5.4089035987854,entropy:4.427029132843018,explained_var_old:0.000,explained_var_new:0.000
+batch i:2595, episode_len:25
+kl:0.00074,lr_multiplier:11.391,loss:5.407622337341309,entropy:4.426463603973389,explained_var_old:0.000,explained_var_new:0.000
+batch i:2596, episode_len:27
+kl:0.00056,lr_multiplier:11.391,loss:5.409482955932617,entropy:4.425136089324951,explained_var_old:0.000,explained_var_new:0.000
+batch i:2597, episode_len:29
+kl:0.00048,lr_multiplier:11.391,loss:5.408102989196777,entropy:4.423965930938721,explained_var_old:0.000,explained_var_new:0.000
+batch i:2598, episode_len:49
+kl:0.00061,lr_multiplier:11.391,loss:5.41072940826416,entropy:4.423637866973877,explained_var_old:0.000,explained_var_new:0.000
+batch i:2599, episode_len:37
+kl:0.00060,lr_multiplier:11.391,loss:5.406922817230225,entropy:4.423820972442627,explained_var_old:0.000,explained_var_new:0.000
+batch i:2600, episode_len:19
+kl:0.00055,lr_multiplier:11.391,loss:5.409373760223389,entropy:4.424205303192139,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2600
+num_playouts:1000, win: 0, lose: 10, tie:0
+batch i:2601, episode_len:49
+kl:0.00071,lr_multiplier:11.391,loss:5.407504081726074,entropy:4.424816608428955,explained_var_old:0.000,explained_var_new:0.000
+batch i:2602, episode_len:37
+kl:0.00083,lr_multiplier:11.391,loss:5.410433769226074,entropy:4.425224781036377,explained_var_old:0.000,explained_var_new:0.000
+batch i:2603, episode_len:32
+kl:0.00073,lr_multiplier:11.391,loss:5.408030033111572,entropy:4.425399303436279,explained_var_old:0.000,explained_var_new:0.000
+batch i:2604, episode_len:37
+kl:0.00113,lr_multiplier:11.391,loss:5.400618553161621,entropy:4.423945903778076,explained_var_old:0.000,explained_var_new:0.000
+batch i:2605, episode_len:34
+kl:0.00076,lr_multiplier:11.391,loss:5.409426689147949,entropy:4.421703815460205,explained_var_old:0.000,explained_var_new:0.000
+batch i:2606, episode_len:27
+kl:0.00058,lr_multiplier:11.391,loss:5.405290603637695,entropy:4.421200275421143,explained_var_old:0.000,explained_var_new:0.000
+batch i:2607, episode_len:20
+kl:0.00057,lr_multiplier:11.391,loss:5.412634372711182,entropy:4.421515941619873,explained_var_old:0.000,explained_var_new:0.000
+batch i:2608, episode_len:28
+kl:0.00067,lr_multiplier:11.391,loss:5.406084060668945,entropy:4.4232258796691895,explained_var_old:0.000,explained_var_new:0.000
+batch i:2609, episode_len:29
+kl:0.00059,lr_multiplier:11.391,loss:5.407169342041016,entropy:4.424239635467529,explained_var_old:0.000,explained_var_new:0.000
+batch i:2610, episode_len:36
+kl:0.00054,lr_multiplier:11.391,loss:5.399160385131836,entropy:4.422591686248779,explained_var_old:0.000,explained_var_new:0.000
+batch i:2611, episode_len:39
+kl:0.00066,lr_multiplier:11.391,loss:5.407695293426514,entropy:4.4197611808776855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2612, episode_len:40
+kl:0.00066,lr_multiplier:11.391,loss:5.409727096557617,entropy:4.420241832733154,explained_var_old:0.000,explained_var_new:0.000
+batch i:2613, episode_len:25
+kl:0.00075,lr_multiplier:11.391,loss:5.400435447692871,entropy:4.421924114227295,explained_var_old:0.000,explained_var_new:0.000
+batch i:2614, episode_len:31
+kl:0.00059,lr_multiplier:11.391,loss:5.403953552246094,entropy:4.4214324951171875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2615, episode_len:34
+kl:0.00075,lr_multiplier:11.391,loss:5.4011735916137695,entropy:4.419723987579346,explained_var_old:0.000,explained_var_new:0.000
+batch i:2616, episode_len:33
+kl:0.00078,lr_multiplier:11.391,loss:5.3995795249938965,entropy:4.41705322265625,explained_var_old:0.000,explained_var_new:0.000
+batch i:2617, episode_len:38
+kl:0.00061,lr_multiplier:11.391,loss:5.404376029968262,entropy:4.415493488311768,explained_var_old:0.000,explained_var_new:0.000
+batch i:2618, episode_len:34
+kl:0.00074,lr_multiplier:11.391,loss:5.40281867980957,entropy:4.417083263397217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2619, episode_len:43
+kl:0.00063,lr_multiplier:11.391,loss:5.396045684814453,entropy:4.41910982131958,explained_var_old:0.000,explained_var_new:0.000
+batch i:2620, episode_len:39
+kl:0.00038,lr_multiplier:11.391,loss:5.410576820373535,entropy:4.420840740203857,explained_var_old:0.000,explained_var_new:0.000
+batch i:2621, episode_len:37
+kl:0.00056,lr_multiplier:11.391,loss:5.411266803741455,entropy:4.42232084274292,explained_var_old:0.000,explained_var_new:0.000
+batch i:2622, episode_len:28
+kl:0.00057,lr_multiplier:11.391,loss:5.405333042144775,entropy:4.423343181610107,explained_var_old:0.000,explained_var_new:0.000
+batch i:2623, episode_len:26
+kl:0.00069,lr_multiplier:11.391,loss:5.401303768157959,entropy:4.422668933868408,explained_var_old:0.000,explained_var_new:0.000
+batch i:2624, episode_len:46
+kl:0.00048,lr_multiplier:11.391,loss:5.404409408569336,entropy:4.419673919677734,explained_var_old:0.000,explained_var_new:0.000
+batch i:2625, episode_len:34
+kl:0.00051,lr_multiplier:11.391,loss:5.404258728027344,entropy:4.418392658233643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2626, episode_len:58
+kl:0.00067,lr_multiplier:11.391,loss:5.397262096405029,entropy:4.418964862823486,explained_var_old:0.000,explained_var_new:0.000
+batch i:2627, episode_len:31
+kl:0.00088,lr_multiplier:11.391,loss:5.4011006355285645,entropy:4.4193339347839355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2628, episode_len:35
+kl:0.00059,lr_multiplier:11.391,loss:5.401731491088867,entropy:4.4175333976745605,explained_var_old:0.000,explained_var_new:0.000
+batch i:2629, episode_len:37
+kl:0.00053,lr_multiplier:11.391,loss:5.406744003295898,entropy:4.416870594024658,explained_var_old:0.000,explained_var_new:0.000
+batch i:2630, episode_len:37
+kl:0.00065,lr_multiplier:11.391,loss:5.401965141296387,entropy:4.418006420135498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2631, episode_len:24
+kl:0.00051,lr_multiplier:11.391,loss:5.405914783477783,entropy:4.418701648712158,explained_var_old:0.000,explained_var_new:0.000
+batch i:2632, episode_len:43
+kl:0.00050,lr_multiplier:11.391,loss:5.401731491088867,entropy:4.4197468757629395,explained_var_old:0.000,explained_var_new:0.000
+batch i:2633, episode_len:47
+kl:0.00054,lr_multiplier:11.391,loss:5.40433931350708,entropy:4.420822620391846,explained_var_old:0.000,explained_var_new:0.000
+batch i:2634, episode_len:26
+kl:0.00057,lr_multiplier:11.391,loss:5.405837059020996,entropy:4.421253681182861,explained_var_old:0.000,explained_var_new:0.000
+batch i:2635, episode_len:31
+kl:0.00063,lr_multiplier:11.391,loss:5.397777557373047,entropy:4.418975353240967,explained_var_old:0.000,explained_var_new:0.000
+batch i:2636, episode_len:17
+kl:0.00049,lr_multiplier:11.391,loss:5.388260841369629,entropy:4.415236949920654,explained_var_old:0.000,explained_var_new:0.000
+batch i:2637, episode_len:33
+kl:0.00042,lr_multiplier:11.391,loss:5.407132148742676,entropy:4.4133687019348145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2638, episode_len:22
+kl:0.00085,lr_multiplier:11.391,loss:5.397178649902344,entropy:4.412551403045654,explained_var_old:0.000,explained_var_new:0.000
+batch i:2639, episode_len:35
+kl:0.00052,lr_multiplier:11.391,loss:5.403406620025635,entropy:4.412017822265625,explained_var_old:0.000,explained_var_new:0.000
+batch i:2640, episode_len:27
+kl:0.00072,lr_multiplier:11.391,loss:5.397959232330322,entropy:4.414382457733154,explained_var_old:0.000,explained_var_new:0.000
+batch i:2641, episode_len:17
+kl:0.00099,lr_multiplier:11.391,loss:5.4028120040893555,entropy:4.415966510772705,explained_var_old:0.000,explained_var_new:0.000
+batch i:2642, episode_len:33
+kl:0.00078,lr_multiplier:11.391,loss:5.396951675415039,entropy:4.415015697479248,explained_var_old:0.000,explained_var_new:0.000
+batch i:2643, episode_len:35
+kl:0.00084,lr_multiplier:11.391,loss:5.402421951293945,entropy:4.413170337677002,explained_var_old:0.000,explained_var_new:0.000
+batch i:2644, episode_len:21
+kl:0.00070,lr_multiplier:11.391,loss:5.400962829589844,entropy:4.4120025634765625,explained_var_old:0.000,explained_var_new:0.000
+batch i:2645, episode_len:33
+kl:0.00051,lr_multiplier:11.391,loss:5.401905059814453,entropy:4.412593364715576,explained_var_old:0.000,explained_var_new:0.000
+batch i:2646, episode_len:46
+kl:0.00063,lr_multiplier:11.391,loss:5.399364948272705,entropy:4.4136128425598145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2647, episode_len:22
+kl:0.00064,lr_multiplier:11.391,loss:5.396589279174805,entropy:4.412791728973389,explained_var_old:0.000,explained_var_new:0.000
+batch i:2648, episode_len:37
+kl:0.00048,lr_multiplier:11.391,loss:5.39778995513916,entropy:4.411861896514893,explained_var_old:0.000,explained_var_new:0.000
+batch i:2649, episode_len:29
+kl:0.00058,lr_multiplier:11.391,loss:5.3902740478515625,entropy:4.41215181350708,explained_var_old:0.000,explained_var_new:0.000
+batch i:2650, episode_len:29
+kl:0.00050,lr_multiplier:11.391,loss:5.393470287322998,entropy:4.411933422088623,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2650
+num_playouts:1000, win: 4, lose: 6, tie:0
+batch i:2651, episode_len:29
+kl:0.00046,lr_multiplier:11.391,loss:5.392663478851318,entropy:4.410579204559326,explained_var_old:0.000,explained_var_new:0.000
+batch i:2652, episode_len:30
+kl:0.00064,lr_multiplier:11.391,loss:5.388791084289551,entropy:4.409522533416748,explained_var_old:0.000,explained_var_new:0.000
+batch i:2653, episode_len:34
+kl:0.00050,lr_multiplier:11.391,loss:5.40214204788208,entropy:4.409389972686768,explained_var_old:0.000,explained_var_new:0.000
+batch i:2654, episode_len:19
+kl:0.00071,lr_multiplier:11.391,loss:5.3905534744262695,entropy:4.410301685333252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2655, episode_len:19
+kl:0.00065,lr_multiplier:11.391,loss:5.405223369598389,entropy:4.410979747772217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2656, episode_len:34
+kl:0.00038,lr_multiplier:11.391,loss:5.389859199523926,entropy:4.411056995391846,explained_var_old:0.000,explained_var_new:0.000
+batch i:2657, episode_len:44
+kl:0.00056,lr_multiplier:11.391,loss:5.395316123962402,entropy:4.409840106964111,explained_var_old:0.000,explained_var_new:0.000
+batch i:2658, episode_len:34
+kl:0.00054,lr_multiplier:11.391,loss:5.378625392913818,entropy:4.40861177444458,explained_var_old:0.000,explained_var_new:0.000
+batch i:2659, episode_len:20
+kl:0.00066,lr_multiplier:11.391,loss:5.395934104919434,entropy:4.407623767852783,explained_var_old:0.000,explained_var_new:0.000
+batch i:2660, episode_len:39
+kl:0.00066,lr_multiplier:11.391,loss:5.382388591766357,entropy:4.405650615692139,explained_var_old:0.000,explained_var_new:0.000
+batch i:2661, episode_len:32
+kl:0.00068,lr_multiplier:11.391,loss:5.392796516418457,entropy:4.401554584503174,explained_var_old:0.000,explained_var_new:0.000
+batch i:2662, episode_len:33
+kl:0.00063,lr_multiplier:11.391,loss:5.377788543701172,entropy:4.399738311767578,explained_var_old:0.000,explained_var_new:0.000
+batch i:2663, episode_len:29
+kl:0.00071,lr_multiplier:11.391,loss:5.416241645812988,entropy:4.401859760284424,explained_var_old:0.000,explained_var_new:0.000
+batch i:2664, episode_len:38
+kl:0.00067,lr_multiplier:11.391,loss:5.378569602966309,entropy:4.402266979217529,explained_var_old:0.000,explained_var_new:0.000
+batch i:2665, episode_len:44
+kl:0.00073,lr_multiplier:11.391,loss:5.395115852355957,entropy:4.401793956756592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2666, episode_len:38
+kl:0.00066,lr_multiplier:11.391,loss:5.380788326263428,entropy:4.40214204788208,explained_var_old:0.000,explained_var_new:0.000
+batch i:2667, episode_len:25
+kl:0.00080,lr_multiplier:11.391,loss:5.387714385986328,entropy:4.401268482208252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2668, episode_len:38
+kl:0.00077,lr_multiplier:11.391,loss:5.387362003326416,entropy:4.401061534881592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2669, episode_len:36
+kl:0.00073,lr_multiplier:11.391,loss:5.385313987731934,entropy:4.401271820068359,explained_var_old:0.000,explained_var_new:0.000
+batch i:2670, episode_len:40
+kl:0.00079,lr_multiplier:11.391,loss:5.376033782958984,entropy:4.3996968269348145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2671, episode_len:27
+kl:0.00055,lr_multiplier:11.391,loss:5.380575180053711,entropy:4.396724224090576,explained_var_old:0.000,explained_var_new:0.000
+batch i:2672, episode_len:45
+kl:0.00061,lr_multiplier:11.391,loss:5.377335548400879,entropy:4.3956217765808105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2673, episode_len:29
+kl:0.00084,lr_multiplier:11.391,loss:5.376253128051758,entropy:4.394909381866455,explained_var_old:0.000,explained_var_new:0.000
+batch i:2674, episode_len:30
+kl:0.00081,lr_multiplier:11.391,loss:5.386213779449463,entropy:4.394713878631592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2675, episode_len:45
+kl:0.00062,lr_multiplier:11.391,loss:5.380224704742432,entropy:4.3963398933410645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2676, episode_len:31
+kl:0.00065,lr_multiplier:11.391,loss:5.384766101837158,entropy:4.3984293937683105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2677, episode_len:30
+kl:0.00059,lr_multiplier:11.391,loss:5.384942531585693,entropy:4.40053129196167,explained_var_old:0.000,explained_var_new:0.000
+batch i:2678, episode_len:46
+kl:0.00059,lr_multiplier:11.391,loss:5.384192943572998,entropy:4.400725841522217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2679, episode_len:34
+kl:0.00046,lr_multiplier:11.391,loss:5.378685474395752,entropy:4.40037202835083,explained_var_old:0.000,explained_var_new:0.000
+batch i:2680, episode_len:35
+kl:0.00061,lr_multiplier:11.391,loss:5.387600898742676,entropy:4.400569438934326,explained_var_old:0.000,explained_var_new:0.000
+batch i:2681, episode_len:31
+kl:0.00058,lr_multiplier:11.391,loss:5.375489234924316,entropy:4.398452281951904,explained_var_old:0.000,explained_var_new:0.000
+batch i:2682, episode_len:36
+kl:0.00062,lr_multiplier:11.391,loss:5.375044822692871,entropy:4.394344329833984,explained_var_old:0.000,explained_var_new:0.000
+batch i:2683, episode_len:23
+kl:0.00059,lr_multiplier:11.391,loss:5.37363862991333,entropy:4.389946460723877,explained_var_old:0.000,explained_var_new:0.000
+batch i:2684, episode_len:28
+kl:0.00070,lr_multiplier:11.391,loss:5.376020431518555,entropy:4.386974334716797,explained_var_old:0.000,explained_var_new:0.000
+batch i:2685, episode_len:27
+kl:0.00065,lr_multiplier:11.391,loss:5.376407623291016,entropy:4.387360095977783,explained_var_old:0.000,explained_var_new:0.000
+batch i:2686, episode_len:59
+kl:0.00066,lr_multiplier:11.391,loss:5.366339206695557,entropy:4.388638019561768,explained_var_old:0.000,explained_var_new:0.000
+batch i:2687, episode_len:32
+kl:0.00066,lr_multiplier:11.391,loss:5.377523899078369,entropy:4.388439178466797,explained_var_old:0.000,explained_var_new:0.000
+batch i:2688, episode_len:36
+kl:0.00051,lr_multiplier:11.391,loss:5.371353626251221,entropy:4.388561725616455,explained_var_old:0.000,explained_var_new:0.000
+batch i:2689, episode_len:39
+kl:0.00062,lr_multiplier:11.391,loss:5.375750541687012,entropy:4.388514995574951,explained_var_old:0.000,explained_var_new:0.000
+batch i:2690, episode_len:48
+kl:0.00050,lr_multiplier:11.391,loss:5.372753143310547,entropy:4.387619495391846,explained_var_old:0.000,explained_var_new:0.000
+batch i:2691, episode_len:29
+kl:0.00045,lr_multiplier:11.391,loss:5.3823442459106445,entropy:4.389693737030029,explained_var_old:0.000,explained_var_new:0.000
+batch i:2692, episode_len:37
+kl:0.00064,lr_multiplier:11.391,loss:5.378302574157715,entropy:4.393630504608154,explained_var_old:0.000,explained_var_new:0.000
+batch i:2693, episode_len:38
+kl:0.00048,lr_multiplier:11.391,loss:5.379385948181152,entropy:4.395839691162109,explained_var_old:0.000,explained_var_new:0.000
+batch i:2694, episode_len:43
+kl:0.00046,lr_multiplier:11.391,loss:5.381317615509033,entropy:4.397148609161377,explained_var_old:0.000,explained_var_new:0.000
+batch i:2695, episode_len:27
+kl:0.00058,lr_multiplier:11.391,loss:5.38314151763916,entropy:4.3983235359191895,explained_var_old:0.000,explained_var_new:0.000
+batch i:2696, episode_len:39
+kl:0.00041,lr_multiplier:11.391,loss:5.378520965576172,entropy:4.397597789764404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2697, episode_len:27
+kl:0.00053,lr_multiplier:11.391,loss:5.379591941833496,entropy:4.395206928253174,explained_var_old:0.000,explained_var_new:0.000
+batch i:2698, episode_len:23
+kl:0.00063,lr_multiplier:11.391,loss:5.380722522735596,entropy:4.393874645233154,explained_var_old:0.000,explained_var_new:0.000
+batch i:2699, episode_len:38
+kl:0.00052,lr_multiplier:11.391,loss:5.382585525512695,entropy:4.394534587860107,explained_var_old:0.000,explained_var_new:0.000
+batch i:2700, episode_len:29
+kl:0.00055,lr_multiplier:11.391,loss:5.385348320007324,entropy:4.397265911102295,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2700
+num_playouts:1000, win: 4, lose: 6, tie:0
+batch i:2701, episode_len:35
+kl:0.00061,lr_multiplier:11.391,loss:5.379522323608398,entropy:4.399773120880127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2702, episode_len:53
+kl:0.00068,lr_multiplier:11.391,loss:5.386347770690918,entropy:4.4007039070129395,explained_var_old:0.000,explained_var_new:0.000
+batch i:2703, episode_len:46
+kl:0.00056,lr_multiplier:11.391,loss:5.383102893829346,entropy:4.400157451629639,explained_var_old:0.000,explained_var_new:0.000
+batch i:2704, episode_len:49
+kl:0.00050,lr_multiplier:11.391,loss:5.374505043029785,entropy:4.396305084228516,explained_var_old:0.000,explained_var_new:0.000
+batch i:2705, episode_len:25
+kl:0.00056,lr_multiplier:11.391,loss:5.377334117889404,entropy:4.39158296585083,explained_var_old:0.000,explained_var_new:0.000
+batch i:2706, episode_len:22
+kl:0.00057,lr_multiplier:11.391,loss:5.382652759552002,entropy:4.390323162078857,explained_var_old:0.000,explained_var_new:0.000
+batch i:2707, episode_len:25
+kl:0.00059,lr_multiplier:11.391,loss:5.377289772033691,entropy:4.391552448272705,explained_var_old:0.000,explained_var_new:0.000
+batch i:2708, episode_len:24
+kl:0.00057,lr_multiplier:11.391,loss:5.378345489501953,entropy:4.392482280731201,explained_var_old:0.000,explained_var_new:0.000
+batch i:2709, episode_len:38
+kl:0.00070,lr_multiplier:11.391,loss:5.374398708343506,entropy:4.392734050750732,explained_var_old:0.000,explained_var_new:0.000
+batch i:2710, episode_len:25
+kl:0.00048,lr_multiplier:11.391,loss:5.375157833099365,entropy:4.392035961151123,explained_var_old:0.000,explained_var_new:0.000
+batch i:2711, episode_len:23
+kl:0.00048,lr_multiplier:11.391,loss:5.377490043640137,entropy:4.392395496368408,explained_var_old:0.000,explained_var_new:0.000
+batch i:2712, episode_len:29
+kl:0.00073,lr_multiplier:11.391,loss:5.384034633636475,entropy:4.394835948944092,explained_var_old:0.000,explained_var_new:0.000
+batch i:2713, episode_len:38
+kl:0.00073,lr_multiplier:11.391,loss:5.391807556152344,entropy:4.398827075958252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2714, episode_len:33
+kl:0.00065,lr_multiplier:11.391,loss:5.38092041015625,entropy:4.402470111846924,explained_var_old:0.000,explained_var_new:0.000
+batch i:2715, episode_len:35
+kl:0.00095,lr_multiplier:11.391,loss:5.379415512084961,entropy:4.4008097648620605,explained_var_old:0.000,explained_var_new:0.000
+batch i:2716, episode_len:32
+kl:0.00072,lr_multiplier:11.391,loss:5.380805969238281,entropy:4.395340442657471,explained_var_old:0.000,explained_var_new:0.000
+batch i:2717, episode_len:45
+kl:0.00055,lr_multiplier:11.391,loss:5.3738532066345215,entropy:4.390998363494873,explained_var_old:0.000,explained_var_new:0.000
+batch i:2718, episode_len:35
+kl:0.00052,lr_multiplier:11.391,loss:5.384139060974121,entropy:4.390739917755127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2719, episode_len:33
+kl:0.00088,lr_multiplier:11.391,loss:5.376453876495361,entropy:4.394378185272217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2720, episode_len:23
+kl:0.00083,lr_multiplier:11.391,loss:5.38342809677124,entropy:4.3974690437316895,explained_var_old:0.000,explained_var_new:0.000
+batch i:2721, episode_len:41
+kl:0.00074,lr_multiplier:11.391,loss:5.375415802001953,entropy:4.398464202880859,explained_var_old:0.000,explained_var_new:0.000
+batch i:2722, episode_len:40
+kl:0.00075,lr_multiplier:11.391,loss:5.381525993347168,entropy:4.39658784866333,explained_var_old:0.000,explained_var_new:0.000
+batch i:2723, episode_len:28
+kl:0.00061,lr_multiplier:11.391,loss:5.381439208984375,entropy:4.394336223602295,explained_var_old:0.000,explained_var_new:0.000
+batch i:2724, episode_len:28
+kl:0.00092,lr_multiplier:11.391,loss:5.377740859985352,entropy:4.392712116241455,explained_var_old:0.000,explained_var_new:0.000
+batch i:2725, episode_len:37
+kl:0.00077,lr_multiplier:11.391,loss:5.380972862243652,entropy:4.393035411834717,explained_var_old:0.000,explained_var_new:0.000
+batch i:2726, episode_len:45
+kl:0.00048,lr_multiplier:11.391,loss:5.383077144622803,entropy:4.395022869110107,explained_var_old:0.000,explained_var_new:0.000
+batch i:2727, episode_len:22
+kl:0.00068,lr_multiplier:11.391,loss:5.373872756958008,entropy:4.3948211669921875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2728, episode_len:28
+kl:0.00087,lr_multiplier:11.391,loss:5.37651252746582,entropy:4.392287731170654,explained_var_old:0.000,explained_var_new:0.000
+batch i:2729, episode_len:24
+kl:0.00069,lr_multiplier:11.391,loss:5.38079309463501,entropy:4.391037464141846,explained_var_old:0.000,explained_var_new:0.000
+batch i:2730, episode_len:24
+kl:0.00086,lr_multiplier:11.391,loss:5.369367599487305,entropy:4.390700817108154,explained_var_old:0.000,explained_var_new:0.000
+batch i:2731, episode_len:28
+kl:0.00077,lr_multiplier:11.391,loss:5.371333122253418,entropy:4.389145374298096,explained_var_old:0.000,explained_var_new:0.000
+batch i:2732, episode_len:42
+kl:0.00073,lr_multiplier:11.391,loss:5.365879058837891,entropy:4.386592388153076,explained_var_old:0.000,explained_var_new:0.000
+batch i:2733, episode_len:18
+kl:0.00049,lr_multiplier:11.391,loss:5.376416206359863,entropy:4.384822368621826,explained_var_old:0.000,explained_var_new:0.000
+batch i:2734, episode_len:28
+kl:0.00064,lr_multiplier:11.391,loss:5.370430946350098,entropy:4.385708332061768,explained_var_old:0.000,explained_var_new:0.000
+batch i:2735, episode_len:46
+kl:0.00058,lr_multiplier:11.391,loss:5.372988224029541,entropy:4.3857035636901855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2736, episode_len:38
+kl:0.00058,lr_multiplier:11.391,loss:5.369203090667725,entropy:4.3855366706848145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2737, episode_len:41
+kl:0.00052,lr_multiplier:11.391,loss:5.362674713134766,entropy:4.384524822235107,explained_var_old:0.000,explained_var_new:0.000
+batch i:2738, episode_len:27
+kl:0.00062,lr_multiplier:11.391,loss:5.367160797119141,entropy:4.382721424102783,explained_var_old:0.000,explained_var_new:0.000
+batch i:2739, episode_len:37
+kl:0.00068,lr_multiplier:11.391,loss:5.370777606964111,entropy:4.382347583770752,explained_var_old:0.000,explained_var_new:0.000
+batch i:2740, episode_len:19
+kl:0.00051,lr_multiplier:11.391,loss:5.370453834533691,entropy:4.383635997772217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2741, episode_len:31
+kl:0.00049,lr_multiplier:11.391,loss:5.369598388671875,entropy:4.384643077850342,explained_var_old:0.000,explained_var_new:0.000
+batch i:2742, episode_len:30
+kl:0.00061,lr_multiplier:11.391,loss:5.37282657623291,entropy:4.3862080574035645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2743, episode_len:47
+kl:0.00060,lr_multiplier:11.391,loss:5.376313209533691,entropy:4.389038562774658,explained_var_old:0.000,explained_var_new:0.000
+batch i:2744, episode_len:24
+kl:0.00061,lr_multiplier:11.391,loss:5.369449615478516,entropy:4.391125202178955,explained_var_old:0.000,explained_var_new:0.000
+batch i:2745, episode_len:41
+kl:0.00056,lr_multiplier:11.391,loss:5.373648643493652,entropy:4.390639781951904,explained_var_old:0.000,explained_var_new:0.000
+batch i:2746, episode_len:28
+kl:0.00045,lr_multiplier:11.391,loss:5.37772798538208,entropy:4.390151500701904,explained_var_old:0.000,explained_var_new:0.000
+batch i:2747, episode_len:20
+kl:0.00044,lr_multiplier:11.391,loss:5.371323585510254,entropy:4.3895792961120605,explained_var_old:0.000,explained_var_new:0.000
+batch i:2748, episode_len:37
+kl:0.00062,lr_multiplier:11.391,loss:5.358902931213379,entropy:4.385643482208252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2749, episode_len:40
+kl:0.00056,lr_multiplier:11.391,loss:5.379005432128906,entropy:4.3817830085754395,explained_var_old:0.000,explained_var_new:0.000
+batch i:2750, episode_len:33
+kl:0.00043,lr_multiplier:11.391,loss:5.365136623382568,entropy:4.380702495574951,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2750
+num_playouts:1000, win: 3, lose: 7, tie:0
+batch i:2751, episode_len:29
+kl:0.00058,lr_multiplier:11.391,loss:5.374291896820068,entropy:4.380401134490967,explained_var_old:0.000,explained_var_new:0.000
+batch i:2752, episode_len:32
+kl:0.00055,lr_multiplier:11.391,loss:5.364315509796143,entropy:4.3796772956848145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2753, episode_len:23
+kl:0.00066,lr_multiplier:11.391,loss:5.349687576293945,entropy:4.377476215362549,explained_var_old:0.000,explained_var_new:0.000
+batch i:2754, episode_len:29
+kl:0.00064,lr_multiplier:11.391,loss:5.3625807762146,entropy:4.3748087882995605,explained_var_old:0.000,explained_var_new:0.000
+batch i:2755, episode_len:31
+kl:0.00061,lr_multiplier:11.391,loss:5.373887538909912,entropy:4.37461519241333,explained_var_old:0.000,explained_var_new:0.000
+batch i:2756, episode_len:27
+kl:0.00057,lr_multiplier:11.391,loss:5.361286163330078,entropy:4.3754496574401855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2757, episode_len:40
+kl:0.00056,lr_multiplier:11.391,loss:5.366172790527344,entropy:4.375468730926514,explained_var_old:0.000,explained_var_new:0.000
+batch i:2758, episode_len:46
+kl:0.00059,lr_multiplier:11.391,loss:5.347522735595703,entropy:4.374439716339111,explained_var_old:0.000,explained_var_new:0.000
+batch i:2759, episode_len:26
+kl:0.00055,lr_multiplier:11.391,loss:5.356571674346924,entropy:4.372742176055908,explained_var_old:0.000,explained_var_new:0.000
+batch i:2760, episode_len:29
+kl:0.00067,lr_multiplier:11.391,loss:5.344320774078369,entropy:4.369682312011719,explained_var_old:0.000,explained_var_new:0.000
+batch i:2761, episode_len:23
+kl:0.00068,lr_multiplier:11.391,loss:5.355447292327881,entropy:4.366981029510498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2762, episode_len:47
+kl:0.00057,lr_multiplier:11.391,loss:5.352015018463135,entropy:4.366748332977295,explained_var_old:0.000,explained_var_new:0.000
+batch i:2763, episode_len:30
+kl:0.00071,lr_multiplier:11.391,loss:5.338752269744873,entropy:4.365966796875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2764, episode_len:31
+kl:0.00089,lr_multiplier:11.391,loss:5.349855899810791,entropy:4.362701892852783,explained_var_old:0.000,explained_var_new:0.000
+batch i:2765, episode_len:25
+kl:0.00069,lr_multiplier:11.391,loss:5.346560478210449,entropy:4.358874797821045,explained_var_old:0.000,explained_var_new:0.000
+batch i:2766, episode_len:30
+kl:0.00055,lr_multiplier:11.391,loss:5.346249103546143,entropy:4.357940673828125,explained_var_old:0.000,explained_var_new:0.000
+batch i:2767, episode_len:22
+kl:0.00044,lr_multiplier:11.391,loss:5.3430914878845215,entropy:4.358757495880127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2768, episode_len:43
+kl:0.00060,lr_multiplier:11.391,loss:5.334076881408691,entropy:4.358699798583984,explained_var_old:0.000,explained_var_new:0.000
+batch i:2769, episode_len:36
+kl:0.00056,lr_multiplier:11.391,loss:5.340019702911377,entropy:4.355956554412842,explained_var_old:0.000,explained_var_new:0.000
+batch i:2770, episode_len:36
+kl:0.00066,lr_multiplier:11.391,loss:5.341264247894287,entropy:4.355361461639404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2771, episode_len:44
+kl:0.00071,lr_multiplier:11.391,loss:5.3455047607421875,entropy:4.357269287109375,explained_var_old:0.000,explained_var_new:0.000
+batch i:2772, episode_len:31
+kl:0.00064,lr_multiplier:11.391,loss:5.34025239944458,entropy:4.3590922355651855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2773, episode_len:41
+kl:0.00077,lr_multiplier:11.391,loss:5.339289665222168,entropy:4.358863830566406,explained_var_old:0.000,explained_var_new:0.000
+batch i:2774, episode_len:15
+kl:0.00094,lr_multiplier:11.391,loss:5.340972900390625,entropy:4.356846332550049,explained_var_old:0.000,explained_var_new:0.000
+batch i:2775, episode_len:15
+kl:0.00079,lr_multiplier:11.391,loss:5.338869094848633,entropy:4.354384899139404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2776, episode_len:18
+kl:0.00072,lr_multiplier:11.391,loss:5.338142395019531,entropy:4.35341215133667,explained_var_old:0.000,explained_var_new:0.000
+batch i:2777, episode_len:47
+kl:0.00094,lr_multiplier:11.391,loss:5.332938194274902,entropy:4.352832317352295,explained_var_old:0.000,explained_var_new:0.000
+batch i:2778, episode_len:33
+kl:0.00107,lr_multiplier:11.391,loss:5.342628479003906,entropy:4.3523335456848145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2779, episode_len:27
+kl:0.00088,lr_multiplier:11.391,loss:5.326790809631348,entropy:4.351780414581299,explained_var_old:0.000,explained_var_new:0.000
+batch i:2780, episode_len:33
+kl:0.00068,lr_multiplier:11.391,loss:5.331793308258057,entropy:4.348918437957764,explained_var_old:0.000,explained_var_new:0.000
+batch i:2781, episode_len:38
+kl:0.00089,lr_multiplier:11.391,loss:5.332302093505859,entropy:4.346251964569092,explained_var_old:0.000,explained_var_new:0.000
+batch i:2782, episode_len:31
+kl:0.00090,lr_multiplier:11.391,loss:5.329614162445068,entropy:4.345203876495361,explained_var_old:0.000,explained_var_new:0.000
+batch i:2783, episode_len:44
+kl:0.00085,lr_multiplier:11.391,loss:5.325328826904297,entropy:4.344379425048828,explained_var_old:0.000,explained_var_new:0.000
+batch i:2784, episode_len:25
+kl:0.00072,lr_multiplier:11.391,loss:5.317234039306641,entropy:4.343208312988281,explained_var_old:0.000,explained_var_new:0.000
+batch i:2785, episode_len:40
+kl:0.00085,lr_multiplier:11.391,loss:5.313663482666016,entropy:4.340626239776611,explained_var_old:0.000,explained_var_new:0.000
+batch i:2786, episode_len:33
+kl:0.00095,lr_multiplier:11.391,loss:5.317493915557861,entropy:4.3362956047058105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2787, episode_len:33
+kl:0.00065,lr_multiplier:11.391,loss:5.309242248535156,entropy:4.330886363983154,explained_var_old:0.000,explained_var_new:0.000
+batch i:2788, episode_len:29
+kl:0.00088,lr_multiplier:11.391,loss:5.311638832092285,entropy:4.326229572296143,explained_var_old:0.000,explained_var_new:0.000
+batch i:2789, episode_len:27
+kl:0.00090,lr_multiplier:11.391,loss:5.310237407684326,entropy:4.324882507324219,explained_var_old:0.000,explained_var_new:0.000
+batch i:2790, episode_len:17
+kl:0.00069,lr_multiplier:11.391,loss:5.314424514770508,entropy:4.326130390167236,explained_var_old:0.000,explained_var_new:0.000
+batch i:2791, episode_len:18
+kl:0.00083,lr_multiplier:11.391,loss:5.315640449523926,entropy:4.3282694816589355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2792, episode_len:34
+kl:0.00102,lr_multiplier:11.391,loss:5.302684783935547,entropy:4.3273091316223145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2793, episode_len:39
+kl:0.00078,lr_multiplier:11.391,loss:5.313880443572998,entropy:4.324248790740967,explained_var_old:0.000,explained_var_new:0.000
+batch i:2794, episode_len:27
+kl:0.00076,lr_multiplier:11.391,loss:5.312943458557129,entropy:4.32515287399292,explained_var_old:0.000,explained_var_new:0.000
+batch i:2795, episode_len:21
+kl:0.00061,lr_multiplier:11.391,loss:5.298927307128906,entropy:4.326297283172607,explained_var_old:0.000,explained_var_new:0.000
+batch i:2796, episode_len:29
+kl:0.00071,lr_multiplier:11.391,loss:5.320828437805176,entropy:4.327502727508545,explained_var_old:0.000,explained_var_new:0.000
+batch i:2797, episode_len:25
+kl:0.00074,lr_multiplier:11.391,loss:5.314733505249023,entropy:4.3299641609191895,explained_var_old:0.000,explained_var_new:0.000
+batch i:2798, episode_len:19
+kl:0.00061,lr_multiplier:11.391,loss:5.3063178062438965,entropy:4.3313374519348145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2799, episode_len:47
+kl:0.00072,lr_multiplier:11.391,loss:5.322666168212891,entropy:4.33054780960083,explained_var_old:0.000,explained_var_new:0.000
+batch i:2800, episode_len:29
+kl:0.00071,lr_multiplier:11.391,loss:5.312514305114746,entropy:4.329200267791748,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2800
+num_playouts:1000, win: 1, lose: 9, tie:0
+batch i:2801, episode_len:24
+kl:0.00108,lr_multiplier:11.391,loss:5.314587593078613,entropy:4.329646587371826,explained_var_old:0.000,explained_var_new:0.000
+batch i:2802, episode_len:27
+kl:0.00091,lr_multiplier:11.391,loss:5.308919429779053,entropy:4.329291820526123,explained_var_old:0.000,explained_var_new:0.000
+batch i:2803, episode_len:35
+kl:0.00094,lr_multiplier:11.391,loss:5.3132123947143555,entropy:4.327968120574951,explained_var_old:0.000,explained_var_new:0.000
+batch i:2804, episode_len:33
+kl:0.00135,lr_multiplier:11.391,loss:5.30704927444458,entropy:4.326530933380127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2805, episode_len:30
+kl:0.00112,lr_multiplier:11.391,loss:5.3176350593566895,entropy:4.3250508308410645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2806, episode_len:33
+kl:0.00075,lr_multiplier:11.391,loss:5.30710506439209,entropy:4.325470447540283,explained_var_old:0.000,explained_var_new:0.000
+batch i:2807, episode_len:42
+kl:0.00083,lr_multiplier:11.391,loss:5.311641693115234,entropy:4.326359272003174,explained_var_old:0.000,explained_var_new:0.000
+batch i:2808, episode_len:25
+kl:0.00077,lr_multiplier:11.391,loss:5.3102827072143555,entropy:4.328239917755127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2809, episode_len:20
+kl:0.00069,lr_multiplier:11.391,loss:5.308305740356445,entropy:4.328453540802002,explained_var_old:0.000,explained_var_new:0.000
+batch i:2810, episode_len:37
+kl:0.00110,lr_multiplier:11.391,loss:5.308852195739746,entropy:4.327186107635498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2811, episode_len:28
+kl:0.00095,lr_multiplier:11.391,loss:5.306132793426514,entropy:4.325096607208252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2812, episode_len:14
+kl:0.00082,lr_multiplier:11.391,loss:5.2984466552734375,entropy:4.322402477264404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2813, episode_len:41
+kl:0.00093,lr_multiplier:11.391,loss:5.291394233703613,entropy:4.3181538581848145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2814, episode_len:31
+kl:0.00107,lr_multiplier:11.391,loss:5.2871904373168945,entropy:4.310936450958252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2815, episode_len:32
+kl:0.00093,lr_multiplier:11.391,loss:5.305495262145996,entropy:4.30726957321167,explained_var_old:0.000,explained_var_new:0.000
+batch i:2816, episode_len:34
+kl:0.00085,lr_multiplier:11.391,loss:5.272400379180908,entropy:4.3078389167785645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2817, episode_len:29
+kl:0.00097,lr_multiplier:11.391,loss:5.277552604675293,entropy:4.304134845733643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2818, episode_len:37
+kl:0.00092,lr_multiplier:11.391,loss:5.2840142250061035,entropy:4.2995076179504395,explained_var_old:0.000,explained_var_new:0.000
+batch i:2819, episode_len:57
+kl:0.00071,lr_multiplier:11.391,loss:5.286616325378418,entropy:4.2984395027160645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2820, episode_len:27
+kl:0.00086,lr_multiplier:11.391,loss:5.282861709594727,entropy:4.3002543449401855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2821, episode_len:18
+kl:0.00089,lr_multiplier:11.391,loss:5.286810874938965,entropy:4.302405834197998,explained_var_old:0.000,explained_var_new:0.000
+batch i:2822, episode_len:32
+kl:0.00101,lr_multiplier:11.391,loss:5.285091400146484,entropy:4.304381847381592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2823, episode_len:24
+kl:0.00077,lr_multiplier:11.391,loss:5.289670467376709,entropy:4.305252552032471,explained_var_old:0.000,explained_var_new:0.000
+batch i:2824, episode_len:36
+kl:0.00085,lr_multiplier:11.391,loss:5.287024021148682,entropy:4.305755138397217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2825, episode_len:35
+kl:0.00080,lr_multiplier:11.391,loss:5.280797958374023,entropy:4.304168224334717,explained_var_old:0.000,explained_var_new:0.000
+batch i:2826, episode_len:31
+kl:0.00073,lr_multiplier:11.391,loss:5.292227745056152,entropy:4.302417755126953,explained_var_old:0.000,explained_var_new:0.000
+batch i:2827, episode_len:41
+kl:0.00093,lr_multiplier:11.391,loss:5.291831016540527,entropy:4.304050922393799,explained_var_old:0.000,explained_var_new:0.000
+batch i:2828, episode_len:17
+kl:0.00098,lr_multiplier:11.391,loss:5.291803359985352,entropy:4.307312488555908,explained_var_old:0.000,explained_var_new:0.000
+batch i:2829, episode_len:26
+kl:0.00092,lr_multiplier:11.391,loss:5.290037631988525,entropy:4.30940580368042,explained_var_old:0.000,explained_var_new:0.000
+batch i:2830, episode_len:19
+kl:0.00106,lr_multiplier:11.391,loss:5.285940647125244,entropy:4.308720111846924,explained_var_old:0.000,explained_var_new:0.000
+batch i:2831, episode_len:23
+kl:0.00107,lr_multiplier:11.391,loss:5.281064033508301,entropy:4.305163860321045,explained_var_old:0.000,explained_var_new:0.000
+batch i:2832, episode_len:36
+kl:0.00096,lr_multiplier:11.391,loss:5.280176162719727,entropy:4.301292896270752,explained_var_old:0.000,explained_var_new:0.000
+batch i:2833, episode_len:29
+kl:0.00082,lr_multiplier:11.391,loss:5.294267177581787,entropy:4.300384998321533,explained_var_old:0.000,explained_var_new:0.000
+batch i:2834, episode_len:31
+kl:0.00117,lr_multiplier:11.391,loss:5.276264190673828,entropy:4.300938129425049,explained_var_old:0.000,explained_var_new:0.000
+batch i:2835, episode_len:31
+kl:0.00079,lr_multiplier:11.391,loss:5.2757568359375,entropy:4.298263072967529,explained_var_old:0.000,explained_var_new:0.000
+batch i:2836, episode_len:33
+kl:0.00099,lr_multiplier:11.391,loss:5.282756805419922,entropy:4.295867919921875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2837, episode_len:35
+kl:0.00080,lr_multiplier:11.391,loss:5.285332679748535,entropy:4.295836925506592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2838, episode_len:15
+kl:0.00065,lr_multiplier:11.391,loss:5.266294479370117,entropy:4.2952799797058105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2839, episode_len:22
+kl:0.00075,lr_multiplier:11.391,loss:5.275784015655518,entropy:4.292530536651611,explained_var_old:0.000,explained_var_new:0.000
+batch i:2840, episode_len:36
+kl:0.00080,lr_multiplier:11.391,loss:5.27214241027832,entropy:4.290626049041748,explained_var_old:0.000,explained_var_new:0.000
+batch i:2841, episode_len:49
+kl:0.00079,lr_multiplier:11.391,loss:5.255773067474365,entropy:4.286422252655029,explained_var_old:0.000,explained_var_new:0.000
+batch i:2842, episode_len:40
+kl:0.00077,lr_multiplier:11.391,loss:5.261727333068848,entropy:4.280608654022217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2843, episode_len:19
+kl:0.00083,lr_multiplier:11.391,loss:5.257299423217773,entropy:4.276160717010498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2844, episode_len:45
+kl:0.00073,lr_multiplier:11.391,loss:5.257321357727051,entropy:4.273433208465576,explained_var_old:0.000,explained_var_new:0.000
+batch i:2845, episode_len:34
+kl:0.00130,lr_multiplier:11.391,loss:5.251739501953125,entropy:4.271373271942139,explained_var_old:0.000,explained_var_new:0.000
+batch i:2846, episode_len:19
+kl:0.00080,lr_multiplier:11.391,loss:5.250377655029297,entropy:4.2697978019714355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2847, episode_len:41
+kl:0.00116,lr_multiplier:11.391,loss:5.260517597198486,entropy:4.271305561065674,explained_var_old:0.000,explained_var_new:0.000
+batch i:2848, episode_len:34
+kl:0.00096,lr_multiplier:11.391,loss:5.246005058288574,entropy:4.271377086639404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2849, episode_len:18
+kl:0.00094,lr_multiplier:11.391,loss:5.242345333099365,entropy:4.269195079803467,explained_var_old:0.000,explained_var_new:0.000
+batch i:2850, episode_len:43
+kl:0.00130,lr_multiplier:11.391,loss:5.2475433349609375,entropy:4.266067028045654,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2850
+num_playouts:1000, win: 4, lose: 6, tie:0
+batch i:2851, episode_len:30
+kl:0.00088,lr_multiplier:11.391,loss:5.24369478225708,entropy:4.262439727783203,explained_var_old:0.000,explained_var_new:0.000
+batch i:2852, episode_len:23
+kl:0.00086,lr_multiplier:11.391,loss:5.244016647338867,entropy:4.2601094245910645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2853, episode_len:36
+kl:0.00098,lr_multiplier:11.391,loss:5.254965782165527,entropy:4.260730266571045,explained_var_old:0.000,explained_var_new:0.000
+batch i:2854, episode_len:48
+kl:0.00136,lr_multiplier:11.391,loss:5.256654739379883,entropy:4.264255046844482,explained_var_old:0.000,explained_var_new:0.000
+batch i:2855, episode_len:21
+kl:0.00099,lr_multiplier:11.391,loss:5.274562835693359,entropy:4.270785808563232,explained_var_old:0.000,explained_var_new:0.000
+batch i:2856, episode_len:41
+kl:0.00069,lr_multiplier:11.391,loss:5.257636070251465,entropy:4.277374744415283,explained_var_old:0.000,explained_var_new:0.000
+batch i:2857, episode_len:33
+kl:0.00095,lr_multiplier:11.391,loss:5.234471321105957,entropy:4.277096271514893,explained_var_old:0.000,explained_var_new:0.000
+batch i:2858, episode_len:38
+kl:0.00102,lr_multiplier:11.391,loss:5.262109756469727,entropy:4.272083759307861,explained_var_old:0.000,explained_var_new:0.000
+batch i:2859, episode_len:32
+kl:0.00091,lr_multiplier:11.391,loss:5.272082328796387,entropy:4.271538257598877,explained_var_old:0.000,explained_var_new:0.000
+batch i:2860, episode_len:27
+kl:0.00080,lr_multiplier:11.391,loss:5.252554416656494,entropy:4.27360200881958,explained_var_old:0.000,explained_var_new:0.000
+batch i:2861, episode_len:38
+kl:0.00061,lr_multiplier:11.391,loss:5.254833221435547,entropy:4.273998737335205,explained_var_old:0.000,explained_var_new:0.000
+batch i:2862, episode_len:37
+kl:0.00072,lr_multiplier:11.391,loss:5.255997657775879,entropy:4.273075580596924,explained_var_old:0.000,explained_var_new:0.000
+batch i:2863, episode_len:19
+kl:0.00067,lr_multiplier:11.391,loss:5.240211486816406,entropy:4.268974781036377,explained_var_old:0.000,explained_var_new:0.000
+batch i:2864, episode_len:22
+kl:0.00079,lr_multiplier:11.391,loss:5.24980354309082,entropy:4.262553691864014,explained_var_old:0.000,explained_var_new:0.000
+batch i:2865, episode_len:37
+kl:0.00075,lr_multiplier:11.391,loss:5.251817226409912,entropy:4.259986877441406,explained_var_old:0.000,explained_var_new:0.000
+batch i:2866, episode_len:41
+kl:0.00092,lr_multiplier:11.391,loss:5.243158340454102,entropy:4.260590076446533,explained_var_old:0.000,explained_var_new:0.000
+batch i:2867, episode_len:31
+kl:0.00060,lr_multiplier:11.391,loss:5.241125583648682,entropy:4.260695934295654,explained_var_old:0.000,explained_var_new:0.000
+batch i:2868, episode_len:27
+kl:0.00060,lr_multiplier:11.391,loss:5.255803108215332,entropy:4.262012004852295,explained_var_old:0.000,explained_var_new:0.000
+batch i:2869, episode_len:34
+kl:0.00088,lr_multiplier:11.391,loss:5.244937419891357,entropy:4.264427661895752,explained_var_old:0.000,explained_var_new:0.000
+batch i:2870, episode_len:31
+kl:0.00080,lr_multiplier:11.391,loss:5.2333245277404785,entropy:4.262641429901123,explained_var_old:0.000,explained_var_new:0.000
+batch i:2871, episode_len:37
+kl:0.00052,lr_multiplier:11.391,loss:5.253659248352051,entropy:4.260147571563721,explained_var_old:0.000,explained_var_new:0.000
+batch i:2872, episode_len:23
+kl:0.00071,lr_multiplier:11.391,loss:5.248673915863037,entropy:4.261699199676514,explained_var_old:0.000,explained_var_new:0.000
+batch i:2873, episode_len:31
+kl:0.00071,lr_multiplier:11.391,loss:5.239457130432129,entropy:4.263007640838623,explained_var_old:0.000,explained_var_new:0.000
+batch i:2874, episode_len:32
+kl:0.00054,lr_multiplier:11.391,loss:5.251142501831055,entropy:4.2625203132629395,explained_var_old:0.000,explained_var_new:0.000
+batch i:2875, episode_len:41
+kl:0.00085,lr_multiplier:11.391,loss:5.2263264656066895,entropy:4.261535167694092,explained_var_old:0.000,explained_var_new:0.000
+batch i:2876, episode_len:33
+kl:0.00081,lr_multiplier:11.391,loss:5.240180969238281,entropy:4.258674144744873,explained_var_old:0.000,explained_var_new:0.000
+batch i:2877, episode_len:28
+kl:0.00059,lr_multiplier:11.391,loss:5.240484714508057,entropy:4.256092548370361,explained_var_old:0.000,explained_var_new:0.000
+batch i:2878, episode_len:24
+kl:0.00093,lr_multiplier:11.391,loss:5.2327880859375,entropy:4.254619121551514,explained_var_old:0.000,explained_var_new:0.000
+batch i:2879, episode_len:29
+kl:0.00105,lr_multiplier:11.391,loss:5.224534034729004,entropy:4.253349304199219,explained_var_old:0.000,explained_var_new:0.000
+batch i:2880, episode_len:23
+kl:0.00065,lr_multiplier:11.391,loss:5.244803428649902,entropy:4.252894878387451,explained_var_old:0.000,explained_var_new:0.000
+batch i:2881, episode_len:21
+kl:0.00037,lr_multiplier:11.391,loss:5.245362758636475,entropy:4.255584239959717,explained_var_old:0.000,explained_var_new:0.000
+batch i:2882, episode_len:43
+kl:0.00064,lr_multiplier:11.391,loss:5.222867965698242,entropy:4.257453441619873,explained_var_old:0.000,explained_var_new:0.000
+batch i:2883, episode_len:26
+kl:0.00085,lr_multiplier:11.391,loss:5.251262664794922,entropy:4.255852222442627,explained_var_old:0.000,explained_var_new:0.000
+batch i:2884, episode_len:39
+kl:0.00080,lr_multiplier:11.391,loss:5.229163646697998,entropy:4.25339937210083,explained_var_old:0.000,explained_var_new:0.000
+batch i:2885, episode_len:36
+kl:0.00095,lr_multiplier:11.391,loss:5.241684913635254,entropy:4.250670909881592,explained_var_old:0.000,explained_var_new:0.000
+batch i:2886, episode_len:21
+kl:0.00085,lr_multiplier:11.391,loss:5.232244491577148,entropy:4.2503886222839355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2887, episode_len:48
+kl:0.00103,lr_multiplier:11.391,loss:5.241094589233398,entropy:4.251579761505127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2888, episode_len:35
+kl:0.00069,lr_multiplier:11.391,loss:5.234058856964111,entropy:4.254765033721924,explained_var_old:0.000,explained_var_new:0.000
+batch i:2889, episode_len:39
+kl:0.00095,lr_multiplier:11.391,loss:5.248181343078613,entropy:4.2585530281066895,explained_var_old:0.000,explained_var_new:0.000
+batch i:2890, episode_len:34
+kl:0.00121,lr_multiplier:11.391,loss:5.235503673553467,entropy:4.2586283683776855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2891, episode_len:33
+kl:0.00068,lr_multiplier:11.391,loss:5.23411750793457,entropy:4.2557148933410645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2892, episode_len:20
+kl:0.00057,lr_multiplier:11.391,loss:5.24416971206665,entropy:4.254622936248779,explained_var_old:0.000,explained_var_new:0.000
+batch i:2893, episode_len:27
+kl:0.00073,lr_multiplier:11.391,loss:5.235774993896484,entropy:4.255279541015625,explained_var_old:0.000,explained_var_new:0.000
+batch i:2894, episode_len:30
+kl:0.00047,lr_multiplier:11.391,loss:5.2360382080078125,entropy:4.2548370361328125,explained_var_old:0.000,explained_var_new:0.000
+batch i:2895, episode_len:35
+kl:0.00045,lr_multiplier:11.391,loss:5.2364606857299805,entropy:4.253783702850342,explained_var_old:0.000,explained_var_new:0.000
+batch i:2896, episode_len:31
+kl:0.00053,lr_multiplier:11.391,loss:5.233147621154785,entropy:4.252903461456299,explained_var_old:0.000,explained_var_new:0.000
+batch i:2897, episode_len:29
+kl:0.00054,lr_multiplier:11.391,loss:5.238680839538574,entropy:4.252711772918701,explained_var_old:0.000,explained_var_new:0.000
+batch i:2898, episode_len:33
+kl:0.00060,lr_multiplier:11.391,loss:5.237085819244385,entropy:4.253577709197998,explained_var_old:0.000,explained_var_new:0.000
+batch i:2899, episode_len:27
+kl:0.00091,lr_multiplier:11.391,loss:5.2427873611450195,entropy:4.256054401397705,explained_var_old:0.000,explained_var_new:0.000
+batch i:2900, episode_len:28
+kl:0.00077,lr_multiplier:11.391,loss:5.2323198318481445,entropy:4.257645130157471,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2900
+num_playouts:1000, win: 6, lose: 4, tie:0
+batch i:2901, episode_len:38
+kl:0.00052,lr_multiplier:11.391,loss:5.234773635864258,entropy:4.256920337677002,explained_var_old:0.000,explained_var_new:0.000
+batch i:2902, episode_len:11
+kl:0.00065,lr_multiplier:11.391,loss:5.227543830871582,entropy:4.254554271697998,explained_var_old:0.000,explained_var_new:0.000
+batch i:2903, episode_len:28
+kl:0.00061,lr_multiplier:11.391,loss:5.231268405914307,entropy:4.251221179962158,explained_var_old:0.000,explained_var_new:0.000
+batch i:2904, episode_len:30
+kl:0.00058,lr_multiplier:11.391,loss:5.224311828613281,entropy:4.2487335205078125,explained_var_old:0.000,explained_var_new:0.000
+batch i:2905, episode_len:27
+kl:0.00067,lr_multiplier:11.391,loss:5.239107608795166,entropy:4.247798442840576,explained_var_old:0.000,explained_var_new:0.000
+batch i:2906, episode_len:46
+kl:0.00062,lr_multiplier:11.391,loss:5.250679969787598,entropy:4.2513813972473145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2907, episode_len:31
+kl:0.00071,lr_multiplier:11.391,loss:5.23768424987793,entropy:4.2569804191589355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2908, episode_len:13
+kl:0.00076,lr_multiplier:11.391,loss:5.245139122009277,entropy:4.26127290725708,explained_var_old:0.000,explained_var_new:0.000
+batch i:2909, episode_len:17
+kl:0.00072,lr_multiplier:11.391,loss:5.232851982116699,entropy:4.262679576873779,explained_var_old:0.000,explained_var_new:0.000
+batch i:2910, episode_len:29
+kl:0.00091,lr_multiplier:11.391,loss:5.240705966949463,entropy:4.2597808837890625,explained_var_old:0.000,explained_var_new:0.000
+batch i:2911, episode_len:42
+kl:0.00076,lr_multiplier:11.391,loss:5.234975814819336,entropy:4.256251811981201,explained_var_old:0.000,explained_var_new:0.000
+batch i:2912, episode_len:38
+kl:0.00088,lr_multiplier:11.391,loss:5.24293851852417,entropy:4.2550435066223145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2913, episode_len:25
+kl:0.00086,lr_multiplier:11.391,loss:5.239185333251953,entropy:4.257008075714111,explained_var_old:0.000,explained_var_new:0.000
+batch i:2914, episode_len:26
+kl:0.00069,lr_multiplier:11.391,loss:5.241879463195801,entropy:4.258663177490234,explained_var_old:0.000,explained_var_new:0.000
+batch i:2915, episode_len:30
+kl:0.00060,lr_multiplier:11.391,loss:5.244852542877197,entropy:4.260013103485107,explained_var_old:0.000,explained_var_new:0.000
+batch i:2916, episode_len:45
+kl:0.00103,lr_multiplier:11.391,loss:5.257208824157715,entropy:4.263454914093018,explained_var_old:0.000,explained_var_new:0.000
+batch i:2917, episode_len:25
+kl:0.00088,lr_multiplier:11.391,loss:5.250242233276367,entropy:4.2682342529296875,explained_var_old:0.000,explained_var_new:0.000
+batch i:2918, episode_len:41
+kl:0.00097,lr_multiplier:11.391,loss:5.25272274017334,entropy:4.270835876464844,explained_var_old:0.000,explained_var_new:0.000
+batch i:2919, episode_len:21
+kl:0.00099,lr_multiplier:11.391,loss:5.254964828491211,entropy:4.2709736824035645,explained_var_old:0.000,explained_var_new:0.000
+batch i:2920, episode_len:21
+kl:0.00051,lr_multiplier:11.391,loss:5.243001461029053,entropy:4.26969575881958,explained_var_old:0.000,explained_var_new:0.000
+batch i:2921, episode_len:20
+kl:0.00077,lr_multiplier:11.391,loss:5.250528335571289,entropy:4.266716480255127,explained_var_old:0.000,explained_var_new:0.000
+batch i:2922, episode_len:31
+kl:0.00094,lr_multiplier:11.391,loss:5.240938663482666,entropy:4.263598918914795,explained_var_old:0.000,explained_var_new:0.000
+batch i:2923, episode_len:34
+kl:0.00075,lr_multiplier:11.391,loss:5.2542266845703125,entropy:4.261390686035156,explained_var_old:0.000,explained_var_new:0.000
+batch i:2924, episode_len:43
+kl:0.00075,lr_multiplier:11.391,loss:5.2672648429870605,entropy:4.264735698699951,explained_var_old:0.000,explained_var_new:0.000
+batch i:2925, episode_len:50
+kl:0.00094,lr_multiplier:11.391,loss:5.253480911254883,entropy:4.270732402801514,explained_var_old:0.000,explained_var_new:0.000
+batch i:2926, episode_len:33
+kl:0.00089,lr_multiplier:11.391,loss:5.2509918212890625,entropy:4.273055553436279,explained_var_old:0.000,explained_var_new:0.000
+batch i:2927, episode_len:25
+kl:0.00056,lr_multiplier:11.391,loss:5.244505405426025,entropy:4.271389484405518,explained_var_old:0.000,explained_var_new:0.000
+batch i:2928, episode_len:21
+kl:0.00064,lr_multiplier:11.391,loss:5.232154846191406,entropy:4.264835357666016,explained_var_old:0.000,explained_var_new:0.000
+batch i:2929, episode_len:23
+kl:0.00058,lr_multiplier:11.391,loss:5.244096755981445,entropy:4.2572245597839355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2930, episode_len:18
+kl:0.00057,lr_multiplier:11.391,loss:5.257129669189453,entropy:4.256611347198486,explained_var_old:0.000,explained_var_new:0.000
+batch i:2931, episode_len:25
+kl:0.00074,lr_multiplier:11.391,loss:5.254775047302246,entropy:4.261730670928955,explained_var_old:0.000,explained_var_new:0.000
+batch i:2932, episode_len:25
+kl:0.00062,lr_multiplier:11.391,loss:5.249457836151123,entropy:4.267269611358643,explained_var_old:0.000,explained_var_new:0.000
+batch i:2933, episode_len:31
+kl:0.00062,lr_multiplier:11.391,loss:5.253073692321777,entropy:4.271190166473389,explained_var_old:0.000,explained_var_new:0.000
+batch i:2934, episode_len:26
+kl:0.00073,lr_multiplier:11.391,loss:5.24616813659668,entropy:4.270771026611328,explained_var_old:0.000,explained_var_new:0.000
+batch i:2935, episode_len:28
+kl:0.00058,lr_multiplier:11.391,loss:5.254970550537109,entropy:4.268097400665283,explained_var_old:0.000,explained_var_new:0.000
+batch i:2936, episode_len:29
+kl:0.00087,lr_multiplier:11.391,loss:5.243124961853027,entropy:4.2659759521484375,explained_var_old:0.000,explained_var_new:0.000
+batch i:2937, episode_len:38
+kl:0.00073,lr_multiplier:11.391,loss:5.24834680557251,entropy:4.26409912109375,explained_var_old:0.000,explained_var_new:0.000
+batch i:2938, episode_len:32
+kl:0.00119,lr_multiplier:11.391,loss:5.25250244140625,entropy:4.264904499053955,explained_var_old:0.000,explained_var_new:0.000
+batch i:2939, episode_len:24
+kl:0.00096,lr_multiplier:11.391,loss:5.244358062744141,entropy:4.264449596405029,explained_var_old:0.000,explained_var_new:0.000
+batch i:2940, episode_len:28
+kl:0.00094,lr_multiplier:11.391,loss:5.2468719482421875,entropy:4.263622283935547,explained_var_old:0.000,explained_var_new:0.000
+batch i:2941, episode_len:30
+kl:0.00086,lr_multiplier:11.391,loss:5.250572204589844,entropy:4.263809680938721,explained_var_old:0.000,explained_var_new:0.000
+batch i:2942, episode_len:20
+kl:0.00063,lr_multiplier:11.391,loss:5.247704029083252,entropy:4.264679431915283,explained_var_old:0.000,explained_var_new:0.000
+batch i:2943, episode_len:37
+kl:0.00065,lr_multiplier:11.391,loss:5.252603530883789,entropy:4.266086101531982,explained_var_old:0.000,explained_var_new:0.000
+batch i:2944, episode_len:28
+kl:0.00107,lr_multiplier:11.391,loss:5.235352516174316,entropy:4.265628337860107,explained_var_old:0.000,explained_var_new:0.000
+batch i:2945, episode_len:45
+kl:0.00081,lr_multiplier:11.391,loss:5.231909275054932,entropy:4.261157512664795,explained_var_old:0.000,explained_var_new:0.000
+batch i:2946, episode_len:17
+kl:0.00053,lr_multiplier:11.391,loss:5.240025043487549,entropy:4.256290912628174,explained_var_old:0.000,explained_var_new:0.000
+batch i:2947, episode_len:43
+kl:0.00069,lr_multiplier:11.391,loss:5.259315490722656,entropy:4.257190227508545,explained_var_old:0.000,explained_var_new:0.000
+batch i:2948, episode_len:26
+kl:0.00067,lr_multiplier:11.391,loss:5.238471984863281,entropy:4.262344837188721,explained_var_old:0.000,explained_var_new:0.000
+batch i:2949, episode_len:27
+kl:0.00066,lr_multiplier:11.391,loss:5.239294528961182,entropy:4.263953685760498,explained_var_old:0.000,explained_var_new:0.000
+batch i:2950, episode_len:42
+kl:0.00075,lr_multiplier:11.391,loss:5.224984645843506,entropy:4.2612996101379395,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 2950
+num_playouts:1000, win: 2, lose: 8, tie:0
+batch i:2951, episode_len:25
+kl:0.00068,lr_multiplier:11.391,loss:5.257558822631836,entropy:4.258720874786377,explained_var_old:0.000,explained_var_new:0.000
+batch i:2952, episode_len:27
+kl:0.00059,lr_multiplier:11.391,loss:5.237927436828613,entropy:4.258652210235596,explained_var_old:0.000,explained_var_new:0.000
+batch i:2953, episode_len:20
+kl:0.00080,lr_multiplier:11.391,loss:5.237102031707764,entropy:4.258045673370361,explained_var_old:0.000,explained_var_new:0.000
+batch i:2954, episode_len:33
+kl:0.00077,lr_multiplier:11.391,loss:5.237857341766357,entropy:4.256992340087891,explained_var_old:0.000,explained_var_new:0.000
+batch i:2955, episode_len:42
+kl:0.00062,lr_multiplier:11.391,loss:5.2334465980529785,entropy:4.254977703094482,explained_var_old:0.000,explained_var_new:0.000
+batch i:2956, episode_len:24
+kl:0.00063,lr_multiplier:11.391,loss:5.223076820373535,entropy:4.251369476318359,explained_var_old:0.000,explained_var_new:0.000
+batch i:2957, episode_len:38
+kl:0.00053,lr_multiplier:11.391,loss:5.211038589477539,entropy:4.246081829071045,explained_var_old:0.000,explained_var_new:0.000
+batch i:2958, episode_len:30
+kl:0.00062,lr_multiplier:11.391,loss:5.232853889465332,entropy:4.242568492889404,explained_var_old:0.000,explained_var_new:0.000
+batch i:2959, episode_len:19
+kl:0.00056,lr_multiplier:11.391,loss:5.22390604019165,entropy:4.241698741912842,explained_var_old:0.000,explained_var_new:0.000
+batch i:2960, episode_len:35
+kl:0.00064,lr_multiplier:11.391,loss:5.234431266784668,entropy:4.242217540740967,explained_var_old:0.000,explained_var_new:0.000
+batch i:2961, episode_len:32
+kl:0.00076,lr_multiplier:11.391,loss:5.22758150100708,entropy:4.243560314178467,explained_var_old:0.000,explained_var_new:0.000
+batch i:2962, episode_len:35
+kl:0.00117,lr_multiplier:11.391,loss:5.224294185638428,entropy:4.244034290313721,explained_var_old:0.000,explained_var_new:0.000
+batch i:2963, episode_len:30
+kl:0.00076,lr_multiplier:11.391,loss:5.235939979553223,entropy:4.244476795196533,explained_var_old:0.000,explained_var_new:0.000
+batch i:2964, episode_len:43
+kl:0.00093,lr_multiplier:11.391,loss:5.225714683532715,entropy:4.245105743408203,explained_var_old:0.000,explained_var_new:0.000
+batch i:2965, episode_len:30
+kl:0.00106,lr_multiplier:11.391,loss:5.229372978210449,entropy:4.244410991668701,explained_var_old:0.000,explained_var_new:0.000
+batch i:2966, episode_len:35
+kl:0.00091,lr_multiplier:11.391,loss:5.226737976074219,entropy:4.2432169914245605,explained_var_old:0.000,explained_var_new:0.000
+batch i:2967, episode_len:25
+kl:0.00101,lr_multiplier:11.391,loss:5.229384899139404,entropy:4.243361949920654,explained_var_old:0.000,explained_var_new:0.000
+batch i:2968, episode_len:21
+kl:0.00087,lr_multiplier:11.391,loss:5.230320930480957,entropy:4.2440876960754395,explained_var_old:0.000,explained_var_new:0.000
+batch i:2969, episode_len:34
+kl:0.00106,lr_multiplier:11.391,loss:5.218758583068848,entropy:4.242088794708252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2970, episode_len:32
+kl:0.00111,lr_multiplier:11.391,loss:5.216855049133301,entropy:4.237880706787109,explained_var_old:0.000,explained_var_new:0.000
+batch i:2971, episode_len:32
+kl:0.00092,lr_multiplier:11.391,loss:5.233172416687012,entropy:4.236721515655518,explained_var_old:0.000,explained_var_new:0.000
+batch i:2972, episode_len:31
+kl:0.00095,lr_multiplier:11.391,loss:5.215368747711182,entropy:4.239043712615967,explained_var_old:0.000,explained_var_new:0.000
+batch i:2973, episode_len:31
+kl:0.00082,lr_multiplier:11.391,loss:5.232495307922363,entropy:4.2411723136901855,explained_var_old:0.000,explained_var_new:0.000
+batch i:2974, episode_len:22
+kl:0.00102,lr_multiplier:11.391,loss:5.226463317871094,entropy:4.244602203369141,explained_var_old:0.000,explained_var_new:0.000
+batch i:2975, episode_len:23
+kl:0.00079,lr_multiplier:11.391,loss:5.238738536834717,entropy:4.247893810272217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2976, episode_len:28
+kl:0.00068,lr_multiplier:11.391,loss:5.232852935791016,entropy:4.251979827880859,explained_var_old:0.000,explained_var_new:0.000
+batch i:2977, episode_len:31
+kl:0.00086,lr_multiplier:11.391,loss:5.231446743011475,entropy:4.253730297088623,explained_var_old:0.000,explained_var_new:0.000
+batch i:2978, episode_len:21
+kl:0.00075,lr_multiplier:11.391,loss:5.228726387023926,entropy:4.252262115478516,explained_var_old:0.000,explained_var_new:0.000
+batch i:2979, episode_len:27
+kl:0.00072,lr_multiplier:11.391,loss:5.223817348480225,entropy:4.24857759475708,explained_var_old:0.000,explained_var_new:0.000
+batch i:2980, episode_len:50
+kl:0.00084,lr_multiplier:11.391,loss:5.236154556274414,entropy:4.246723651885986,explained_var_old:0.000,explained_var_new:0.000
+batch i:2981, episode_len:28
+kl:0.00090,lr_multiplier:11.391,loss:5.231710433959961,entropy:4.247459888458252,explained_var_old:0.000,explained_var_new:0.000
+batch i:2982, episode_len:29
+kl:0.00077,lr_multiplier:11.391,loss:5.224836349487305,entropy:4.247265338897705,explained_var_old:0.000,explained_var_new:0.000
+batch i:2983, episode_len:26
+kl:0.00068,lr_multiplier:11.391,loss:5.228221893310547,entropy:4.245952606201172,explained_var_old:0.000,explained_var_new:0.000
+batch i:2984, episode_len:28
+kl:0.00085,lr_multiplier:11.391,loss:5.222622871398926,entropy:4.244163990020752,explained_var_old:0.000,explained_var_new:0.000
+batch i:2985, episode_len:34
+kl:0.00075,lr_multiplier:11.391,loss:5.228235244750977,entropy:4.243018627166748,explained_var_old:0.000,explained_var_new:0.000
+batch i:2986, episode_len:25
+kl:0.00094,lr_multiplier:11.391,loss:5.222902297973633,entropy:4.243403911590576,explained_var_old:0.000,explained_var_new:0.000
+batch i:2987, episode_len:23
+kl:0.00111,lr_multiplier:11.391,loss:5.224874496459961,entropy:4.242950916290283,explained_var_old:0.000,explained_var_new:0.000
+batch i:2988, episode_len:35
+kl:0.00106,lr_multiplier:11.391,loss:5.232640743255615,entropy:4.243187427520752,explained_var_old:0.000,explained_var_new:0.000
+batch i:2989, episode_len:32
+kl:0.00086,lr_multiplier:11.391,loss:5.220103740692139,entropy:4.244353771209717,explained_var_old:0.000,explained_var_new:0.000
+batch i:2990, episode_len:40
+kl:0.00076,lr_multiplier:11.391,loss:5.223132610321045,entropy:4.244353771209717,explained_var_old:0.000,explained_var_new:0.000
+batch i:2991, episode_len:37
+kl:0.00124,lr_multiplier:11.391,loss:5.223390102386475,entropy:4.2436747550964355,explained_var_old:0.000,explained_var_new:0.000
+batch i:2992, episode_len:34
+kl:0.00110,lr_multiplier:11.391,loss:5.23294734954834,entropy:4.243492126464844,explained_var_old:0.000,explained_var_new:0.000
+batch i:2993, episode_len:24
+kl:0.00069,lr_multiplier:11.391,loss:5.226319313049316,entropy:4.244239807128906,explained_var_old:0.000,explained_var_new:0.000
+batch i:2994, episode_len:26
+kl:0.00110,lr_multiplier:11.391,loss:5.215962886810303,entropy:4.2439351081848145,explained_var_old:0.000,explained_var_new:0.000
+batch i:2995, episode_len:38
+kl:0.00111,lr_multiplier:11.391,loss:5.228866100311279,entropy:4.243107318878174,explained_var_old:0.000,explained_var_new:0.000
+batch i:2996, episode_len:30
+kl:0.00083,lr_multiplier:11.391,loss:5.222742080688477,entropy:4.2429118156433105,explained_var_old:0.000,explained_var_new:0.000
+batch i:2997, episode_len:38
+kl:0.00096,lr_multiplier:11.391,loss:5.238778591156006,entropy:4.244231700897217,explained_var_old:0.000,explained_var_new:0.000
+batch i:2998, episode_len:45
+kl:0.00117,lr_multiplier:11.391,loss:5.235818862915039,entropy:4.248172760009766,explained_var_old:0.000,explained_var_new:0.000
+batch i:2999, episode_len:40
+kl:0.00085,lr_multiplier:11.391,loss:5.237930774688721,entropy:4.252937316894531,explained_var_old:0.000,explained_var_new:0.000
+batch i:3000, episode_len:31
+kl:0.00107,lr_multiplier:11.391,loss:5.232415199279785,entropy:4.257004261016846,explained_var_old:0.000,explained_var_new:0.000
+current self-play batch: 3000
+num_playouts:1000, win: 5, lose: 5, tie:0
