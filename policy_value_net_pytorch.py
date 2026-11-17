@@ -74,7 +74,10 @@ class PolicyValueNet():
                                     weight_decay=self.l2_const)
 
         if model_file:
-            net_params = torch.load(model_file)
+            # 必须带 map_location：GPU 上保存的 checkpoint 在纯 CPU 机器上
+            # 直接 torch.load 会抛 "Attempting to deserialize object on a CUDA device"
+            map_loc = None if (self.use_gpu and torch.cuda.is_available()) else 'cpu'
+            net_params = torch.load(model_file, map_location=map_loc)
             self.policy_value_net.load_state_dict(net_params)
 
     def policy_value(self, state_batch):
@@ -82,16 +85,18 @@ class PolicyValueNet():
         input: a batch of states
         output: a batch of action probabilities and state values
         """
-        if self.use_gpu:
-            state_batch = Variable(torch.FloatTensor(state_batch).cuda())
-            log_act_probs, value = self.policy_value_net(state_batch)
-            act_probs = np.exp(log_act_probs.data.cpu().numpy())
-            return act_probs, value.data.cpu().numpy()
-        else:
-            state_batch = Variable(torch.FloatTensor(state_batch))
-            log_act_probs, value = self.policy_value_net(state_batch)
-            act_probs = np.exp(log_act_probs.data.numpy())
-            return act_probs, value.data.numpy()
+        # 纯推理：不建计算图，省显存也省时间
+        with torch.no_grad():
+            if self.use_gpu:
+                state_batch = torch.FloatTensor(state_batch).cuda()
+                log_act_probs, value = self.policy_value_net(state_batch)
+                act_probs = np.exp(log_act_probs.cpu().numpy())
+                return act_probs, value.cpu().numpy()
+            else:
+                state_batch = torch.FloatTensor(state_batch)
+                log_act_probs, value = self.policy_value_net(state_batch)
+                act_probs = np.exp(log_act_probs.numpy())
+                return act_probs, value.numpy()
 
     def policy_value_fn(self, board):
         """
@@ -101,17 +106,18 @@ class PolicyValueNet():
         """
         legal_positions = board.availables
         current_state = np.ascontiguousarray(board.current_state().reshape(
-                -1, 4, self.board_width, self.board_height))
-        if self.use_gpu:
-            log_act_probs, value = self.policy_value_net(
-                    Variable(torch.from_numpy(current_state)).cuda().float())
-            act_probs = np.exp(log_act_probs.data.cpu().numpy().flatten())
-            value = value.data.cpu().numpy()[0][0]
-        else:
-            log_act_probs, value = self.policy_value_net(
-                    Variable(torch.from_numpy(current_state)).float())
-            act_probs = np.exp(log_act_probs.data.numpy().flatten())
-            value = value.data.numpy()[0][0]
+                -1, 4, self.board_height, self.board_width))
+        with torch.no_grad():
+            if self.use_gpu:
+                log_act_probs, value = self.policy_value_net(
+                        torch.from_numpy(current_state).cuda().float())
+                act_probs = np.exp(log_act_probs.cpu().numpy().flatten())
+                value = value.cpu().numpy()[0][0]
+            else:
+                log_act_probs, value = self.policy_value_net(
+                        torch.from_numpy(current_state).float())
+                act_probs = np.exp(log_act_probs.numpy().flatten())
+                value = value.numpy()[0][0]
         act_probs = zip(legal_positions, act_probs[legal_positions])
         return act_probs, value
 

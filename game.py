@@ -58,19 +58,23 @@ class Board(object):
         state shape: 4*width*height
         """
 
-        square_state = np.zeros((4, self.width, self.height))
+        # 轴顺序是 (通道, 行=高度, 列=宽度)。写成 (width, height) 只在方棋盘上
+        # 与正确结果重合，非方棋盘会把行列写反。
+        square_state = np.zeros((4, self.height, self.width))
         if self.states:
             moves, players = np.array(list(zip(*self.states.items())))
             move_curr = moves[players == self.current_player]
             move_oppo = moves[players != self.current_player]
+            # 列坐标必须对宽度取模；用 height 只在方棋盘下碰巧正确
             square_state[0][move_curr // self.width,
-                            move_curr % self.height] = 1.0
+                            move_curr % self.width] = 1.0
             square_state[1][move_oppo // self.width,
-                            move_oppo % self.height] = 1.0
+                            move_oppo % self.width] = 1.0
             # indicate the last move location
             square_state[2][self.last_move // self.width,
-                            self.last_move % self.height] = 1.0
-        if len(self.states) % 2 == 0:
+                            self.last_move % self.width] = 1.0
+        # 按当前玩家的身份着色，而不是按已走步数：start_player=1 时两者不等价
+        if self.current_player == self.players[0]:
             square_state[3][:, :] = 1.0  # indicate the colour to play
         return square_state[:, ::-1, :]
 
@@ -187,11 +191,16 @@ class Game(object):
                         print("Game end. Tie")
                 return winner
 
-    def start_self_play(self, player, is_shown=0, temp=1e-3):
+    def start_self_play(self, player, is_shown=0, temp=1e-3, start_player=None):
         """ start a self-play game using a MCTS player, reuse the search tree,
         and store the self-play data: (state, mcts_probs, z) for training
+
+        start_player=None 时随机决定先手。固定先手会让颜色通道与「我是
+        player1」完全共线，价值网络学不到先手/后手的差异。
         """
-        self.board.init_board()
+        if start_player is None:
+            start_player = np.random.randint(2)
+        self.board.init_board(start_player)
         p1, p2 = self.board.players
         states, mcts_probs, current_players = [], [], []
         while True:

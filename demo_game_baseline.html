@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>上游模型 · 8×8 自对弈（对照） · AlphaZero-Gomoku</title>
+<style>
+:root{
+  --bg:#141414; --card:#1c1c1c; --card2:#212120; --line:rgba(255,255,255,.09);
+  --fg:#e8e8e6; --dim:#9a9a96; --dim2:#6f6f6b;
+  --p1:#F0997B; --p2:#85B7EB; --prior:#6f6f6b; --accent:#EF9F27; --teal:#5DCAA5;
+  --board:#1a1a19;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Noto Sans CJK SC","Source Han Sans CN","PingFang SC",system-ui,sans-serif;
+  font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:36px 24px 64px}
+h1{font-size:22px;font-weight:500;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:12.5px;margin:0 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{background:var(--card);border:.5px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-size:12px;color:var(--dim)}
+.chip b{color:var(--fg);font-weight:500}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+@media(max-width:820px){.layout{grid-template-columns:1fr}}
+.boardwrap{background:var(--card);border:.5px solid var(--line);border-radius:14px;padding:16px}
+#board{display:grid;gap:0;width:100%;aspect-ratio:1;user-select:none}
+.cell{position:relative;border-right:.5px solid rgba(255,255,255,.055);
+  border-bottom:.5px solid rgba(255,255,255,.055)}
+.cell.edge-r{border-right:none}.cell.edge-b{border-bottom:none}
+.lab{display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--dim2);font-variant-numeric:tabular-nums}
+.stone{position:absolute;inset:8%;border-radius:50%;opacity:0;transform:scale(.4);
+  transition:opacity .18s ease,transform .18s ease}
+.stone.on{opacity:1;transform:scale(1)}
+.stone.p1{background:var(--p1)}
+.stone.p2{background:var(--p2)}
+.stone.last{box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 0 4px rgba(0,0,0,.35)}
+.cand{position:absolute;border-radius:50%;background:rgba(239,159,39,.20);
+  border:1px solid rgba(239,159,39,.55);display:flex;align-items:center;
+  justify-content:center;font-size:9.5px;color:#F5C97A;
+  font-variant-numeric:tabular-nums;transition:opacity .15s}
+.cand.hide{opacity:0}
+.cand.best{border-width:1.5px;border-color:var(--accent);background:rgba(239,159,39,.34);color:#FFD79A}
+.side{display:flex;flex-direction:column;gap:14px}
+.panel{background:var(--card);border:.5px solid var(--line);border-radius:12px;padding:15px 16px}
+.panel h3{font-size:12px;font-weight:400;color:var(--dim);margin:0 0 10px}
+.now{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.now .ply{font-size:26px;font-weight:500;letter-spacing:-.02em}
+.now .who{font-size:12.5px;color:var(--dim)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:12.5px}
+.kv dt{color:var(--dim)}
+.kv dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.cmp{display:grid;grid-template-columns:44px 1fr 1fr;gap:5px 8px;align-items:center;font-size:11.5px}
+.cmp .hd{color:var(--dim2);font-size:10.5px;padding-bottom:2px}
+.cmp .pos{color:var(--dim);font-variant-numeric:tabular-nums}
+.bar{position:relative;height:13px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;border-radius:3px;display:block}
+.bar span{position:absolute;inset:0;display:flex;align-items:center;
+  padding-left:4px;font-size:9.5px;color:#dcdcd8;font-variant-numeric:tabular-nums}
+.ctrl{display:flex;align-items:center;gap:8px;margin-top:16px}
+button{background:var(--card2);color:var(--fg);border:.5px solid var(--line);
+  border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
+button:hover{border-color:rgba(255,255,255,.25)}
+button:disabled{opacity:.35;cursor:default}
+input[type=range]{flex:1;accent-color:var(--accent)}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:26px}
+.key{background:var(--card);border:.5px solid var(--line);border-radius:10px;
+  padding:11px 13px;cursor:pointer;transition:border-color .15s}
+.key:hover{border-color:rgba(239,159,39,.5)}
+.key.active{border-color:var(--accent)}
+.key .n{font-size:11px;color:var(--dim2);margin-bottom:3px}
+.key .t{font-size:12.5px;line-height:1.45}
+h2{font-size:13px;font-weight:500;color:var(--dim);margin:32px 0 10px;
+  letter-spacing:.02em}
+#vcurve{width:100%;height:86px;display:block}
+.vlegend{display:flex;gap:14px;font-size:11px;color:var(--dim);margin-top:6px}
+.vlegend i{display:inline-block;width:12px;height:2px;vertical-align:middle;margin-right:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>上游模型 · 8×8 自对弈（对照）</h1>
+  <p class="sub" id="sub"></p>
+  <div class="chips" id="chips"></div>
+
+  <div class="layout">
+    <div>
+      <div class="boardwrap"><div id="board"></div></div>
+      <div class="ctrl">
+        <button id="first">⏮</button>
+        <button id="prev">◀</button>
+        <button id="play">播放</button>
+        <button id="next">▶</button>
+        <button id="last">⏭</button>
+        <input type="range" id="slider" min="0" max="0" value="0">
+        <span id="pos" style="font-size:12px;color:var(--dim);min-width:56px;text-align:right"></span>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <div class="now">
+          <span class="ply" id="ply">1</span>
+          <span class="who" id="who"></span>
+        </div>
+        <dl class="kv">
+          <dt>落点</dt><dd id="pos2">—</dd>
+          <dt>网络价值 v</dt><dd id="nv">—</dd>
+          <dt>搜索 Q</dt><dd id="rq">—</dd>
+          <dt>首选点访问占比</dt><dd id="cf">—</dd>
+          <dt>搜索量</dt><dd id="rv">—</dd>
+        </dl>
+      </div>
+
+      <div class="panel">
+        <h3>先验 vs 搜索后的概率</h3>
+        <div class="cmp" id="cmp">
+          <div class="hd"></div><div class="hd">网络先验</div><div class="hd">MCTS 搜索</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>网络价值 v 与概率集中度</h3>
+        <svg id="vcurve" viewBox="0 0 300 104" preserveAspectRatio="none"></svg>
+        <div class="vlegend">
+          <span><i style="background:var(--teal)"></i>价值 v（左轴 −1…+1）</span>
+          <span><i style="background:var(--accent)"></i>首选访问占比</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>关键节点</h2>
+  <div class="keys" id="keys"></div>
+</div>
+
+<script>
+const G = {"meta":{"model":"best_policy_8_8_5.model","backend":"NumPy (Theano \u6743\u91cd)","board_width":8,"board_height":8,"n_in_row":5,"n_playout":400,"c_puct":5.0,"seed":7,"winner":1,"total_moves":29,"elapsed":24.14},"moves":[{"i":0,"player":1,"move":28,"h":3,"w":4,"net_value":0.2874,"root_q":0.5346,"root_visits":399,"prior":[[36,0.1983],[35,0.1842],[28,0.178],[27,0.1684],[18,0.0498]],"search":[[28,0.2657],[36,0.2431],[27,0.208],[35,0.193],[21,0.015]],"confidence":0.2657,"elapsed":0.702},{"i":1,"player":2,"move":35,"h":4,"w":3,"net_value":-0.5361,"root_q":-0.7359,"root_visits":399,"prior":[[35,0.3901],[19,0.057],[21,0.0545],[27,0.0402],[42,0.0383]],"search":[[35,0.198],[48,0.1228],[19,0.1078],[8,0.0652],[21,0.0602]],"confidence":0.198,"elapsed":0.785},{"i":2,"player":1,"move":36,"h":4,"w":4,"net_value":0.1611,"root_q":0.8384,"root_visits":399,"prior":[[36,0.5125],[27,0.2668],[37,0.065],[19,0.036],[18,0.0183]],"search":[[36,0.802],[27,0.1704],[37,0.0125],[19,0.0075],[18,0.0025]],"confidence":0.802,"elapsed":0.789},{"i":3,"player":2,"move":44,"h":5,"w":4,"net_value":-0.914,"root_q":-0.8067,"root_visits":399,"prior":[[44,0.6981],[27,0.1045],[20,0.0436],[26,0.0303],[12,0.0126]],"search":[[44,0.6742],[27,0.1053],[20,0.0301],[26,0.0201],[19,0.01]],"confidence":0.6742,"elapsed":0.741},{"i":4,"player":1,"move":26,"h":3,"w":2,"net_value":0.4886,"root_q":0.8947,"root_visits":399,"prior":[[26,0.4662],[20,0.1443],[27,0.102],[53,0.0884],[43,0.037]],"search":[[26,0.8571],[53,0.0451],[27,0.0376],[20,0.0276],[43,0.01]],"confidence":0.8571,"elapsed":0.87},{"i":5,"player":2,"move":27,"h":3,"w":3,"net_value":-0.9981,"root_q":-0.8695,"root_visits":399,"prior":[[27,0.9371],[43,0.0106],[51,0.0066],[45,0.005],[29,0.0046]],"search":[[27,0.8521],[43,0.005],[0,0.0025],[1,0.0025],[2,0.0025]],"confidence":0.8521,"elapsed":0.858},{"i":6,"player":1,"move":43,"h":5,"w":3,"net_value":0.9589,"root_q":0.8817,"root_visits":399,"prior":[[43,0.5684],[19,0.3113],[20,0.0359],[18,0.0092],[12,0.0085]],"search":[[43,0.6767],[19,0.3058],[20,0.0175],[0,0.0],[1,0.0]],"confidence":0.6767,"elapsed":0.622},{"i":7,"player":2,"move":50,"h":6,"w":2,"net_value":-0.9518,"root_q":-0.7277,"root_visits":399,"prior":[[19,0.3455],[50,0.1485],[29,0.1072],[53,0.0619],[34,0.0604]],"search":[[50,0.2982],[19,0.2732],[29,0.0777],[34,0.0752],[53,0.0451]],"confidence":0.2982,"elapsed":0.573},{"i":8,"player":1,"move":19,"h":2,"w":3,"net_value":0.9201,"root_q":0.7574,"root_visits":399,"prior":[[19,0.3603],[20,0.2014],[29,0.0895],[52,0.0392],[34,0.0372]],"search":[[19,0.3534],[29,0.1654],[20,0.1378],[51,0.0802],[52,0.0652]],"confidence":0.3534,"elapsed":0.668},{"i":9,"player":2,"move":53,"h":6,"w":5,"net_value":-0.9204,"root_q":-0.7217,"root_visits":399,"prior":[[53,0.1934],[37,0.1126],[12,0.1089],[51,0.1022],[10,0.0993]],"search":[[53,0.2531],[51,0.1378],[37,0.1253],[12,0.0952],[10,0.0852]],"confidence":0.2531,"elapsed":0.749},{"i":10,"player":1,"move":10,"h":1,"w":2,"net_value":0.7989,"root_q":0.7731,"root_visits":399,"prior":[[10,0.4164],[37,0.1635],[33,0.0998],[12,0.0812],[20,0.0718]],"search":[[10,0.4436],[12,0.2281],[33,0.1103],[37,0.0802],[51,0.0727]],"confidence":0.4436,"elapsed":0.871},{"i":11,"player":2,"move":37,"h":4,"w":5,"net_value":-0.2723,"root_q":-0.6151,"root_visits":399,"prior":[[62,0.2309],[37,0.1622],[51,0.1508],[1,0.1425],[33,0.0344]],"search":[[37,0.3333],[1,0.2105],[62,0.1529],[51,0.0852],[46,0.0226]],"confidence":0.3333,"elapsed":1.183},{"i":12,"player":1,"move":51,"h":6,"w":3,"net_value":0.9796,"root_q":0.8196,"root_visits":399,"prior":[[1,0.2333],[12,0.2133],[33,0.2022],[51,0.0745],[20,0.0723]],"search":[[51,0.6216],[12,0.1103],[1,0.0752],[33,0.0677],[30,0.0501]],"confidence":0.6216,"elapsed":0.98},{"i":13,"player":2,"move":29,"h":3,"w":5,"net_value":-0.2859,"root_q":-0.6342,"root_visits":399,"prior":[[30,0.2677],[29,0.1186],[62,0.1165],[45,0.0717],[1,0.0706]],"search":[[29,0.2857],[30,0.1679],[62,0.1579],[1,0.0576],[34,0.0551]],"confidence":0.2857,"elapsed":0.733},{"i":14,"player":1,"move":45,"h":5,"w":5,"net_value":0.9676,"root_q":0.8784,"root_visits":399,"prior":[[1,0.1993],[20,0.1783],[12,0.1646],[33,0.1387],[45,0.0921]],"search":[[45,0.4812],[21,0.3133],[20,0.0476],[1,0.0451],[12,0.0451]],"confidence":0.4812,"elapsed":0.712},{"i":15,"player":2,"move":62,"h":7,"w":6,"net_value":-0.9336,"root_q":-0.7459,"root_visits":399,"prior":[[30,0.2175],[62,0.1015],[20,0.0928],[33,0.0876],[34,0.0728]],"search":[[62,0.2231],[30,0.2005],[1,0.0852],[34,0.0827],[20,0.0702]],"confidence":0.2231,"elapsed":0.651},{"i":16,"player":1,"move":12,"h":1,"w":4,"net_value":0.9974,"root_q":0.9716,"root_visits":399,"prior":[[33,0.2739],[12,0.1739],[20,0.1625],[1,0.152],[59,0.0537]],"search":[[12,0.5263],[1,0.1328],[20,0.1328],[33,0.1053],[52,0.0476]],"confidence":0.5263,"elapsed":0.707},{"i":17,"player":2,"move":30,"h":3,"w":6,"net_value":-0.9711,"root_q":-0.9709,"root_visits":399,"prior":[[30,0.3213],[33,0.2449],[20,0.0974],[5,0.0823],[13,0.0433]],"search":[[30,0.3183],[33,0.2206],[20,0.0952],[5,0.0777],[13,0.0702]],"confidence":0.3183,"elapsed":0.761},{"i":18,"player":1,"move":33,"h":4,"w":1,"net_value":0.9995,"root_q":0.9824,"root_visits":399,"prior":[[33,0.5102],[20,0.3594],[1,0.0366],[52,0.0236],[31,0.0153]],"search":[[33,0.5564],[20,0.3734],[1,0.0351],[52,0.0226],[31,0.0125]],"confidence":0.5564,"elapsed":0.703},{"i":19,"player":2,"move":5,"h":0,"w":5,"net_value":-0.9506,"root_q":-0.9844,"root_visits":399,"prior":[[5,0.2346],[23,0.1866],[40,0.0959],[46,0.0791],[31,0.057]],"search":[[5,0.2306],[23,0.1779],[46,0.0977],[40,0.0927],[13,0.0526]],"confidence":0.2306,"elapsed":0.762},{"i":20,"player":1,"move":20,"h":2,"w":4,"net_value":0.9922,"root_q":0.9802,"root_visits":399,"prior":[[20,0.6701],[13,0.0589],[1,0.0568],[52,0.0556],[40,0.0527]],"search":[[20,0.7694],[13,0.0727],[40,0.0652],[52,0.0351],[1,0.0301]],"confidence":0.7694,"elapsed":0.721},{"i":21,"player":2,"move":4,"h":0,"w":4,"net_value":-0.5318,"root_q":-0.9539,"root_visits":399,"prior":[[4,0.3488],[23,0.139],[13,0.0735],[46,0.0627],[18,0.0544]],"search":[[4,0.391],[23,0.1303],[13,0.0677],[46,0.0576],[18,0.0501]],"confidence":0.391,"elapsed":0.953},{"i":22,"player":1,"move":52,"h":6,"w":4,"net_value":0.9916,"root_q":0.9858,"root_visits":399,"prior":[[52,0.4337],[40,0.1348],[1,0.1023],[31,0.0764],[59,0.056]],"search":[[52,0.5188],[40,0.1729],[1,0.1178],[31,0.0727],[59,0.0426]],"confidence":0.5188,"elapsed":1.007},{"i":23,"player":2,"move":31,"h":3,"w":7,"net_value":-0.8889,"root_q":-0.9961,"root_visits":399,"prior":[[31,0.2114],[38,0.1425],[23,0.1125],[46,0.0824],[18,0.0703]],"search":[[31,0.193],[38,0.1328],[23,0.1078],[13,0.1028],[46,0.0752]],"confidence":0.193,"elapsed":1.013},{"i":24,"player":1,"move":59,"h":7,"w":3,"net_value":0.9998,"root_q":0.982,"root_visits":399,"prior":[[59,0.4002],[40,0.1703],[1,0.1209],[23,0.0376],[38,0.0354]],"search":[[59,0.4486],[40,0.208],[1,0.1203],[23,0.0426],[38,0.0401]],"confidence":0.4486,"elapsed":0.97},{"i":25,"player":2,"move":21,"h":2,"w":5,"net_value":-0.9487,"root_q":-0.9205,"root_visits":399,"prior":[[21,0.1517],[46,0.1433],[58,0.0969],[23,0.0936],[18,0.0816]],"search":[[21,0.1905],[13,0.1278],[46,0.1278],[23,0.0852],[58,0.0852]],"confidence":0.1905,"elapsed":0.991},{"i":26,"player":1,"move":13,"h":1,"w":5,"net_value":0.9993,"root_q":0.9928,"root_visits":399,"prior":[[13,0.5205],[40,0.1348],[38,0.0663],[61,0.0566],[1,0.0562]],"search":[[13,0.7594],[40,0.2055],[38,0.01],[1,0.0075],[61,0.0075]],"confidence":0.7594,"elapsed":1.014},{"i":27,"player":2,"move":38,"h":4,"w":6,"net_value":-0.9952,"root_q":-0.9664,"root_visits":399,"prior":[[38,0.26],[58,0.1385],[46,0.104],[40,0.0733],[23,0.0588]],"search":[[38,0.3033],[58,0.1404],[46,0.1053],[40,0.0727],[23,0.0576]],"confidence":0.3033,"elapsed":1.093},{"i":28,"player":1,"move":40,"h":5,"w":0,"net_value":1.0,"root_q":1.0,"root_visits":399,"prior":[[40,0.2091],[11,0.1788],[61,0.1188],[15,0.0887],[46,0.0753]],"search":[[40,0.2632],[61,0.1504],[11,0.1429],[46,0.0927],[15,0.0852]],"confidence":0.2632,"elapsed":0.951}],"final_board":[[0,0,0,1,0,0,2,0],[0,0,2,1,1,2,0,0],[1,0,0,1,2,1,0,0],[0,1,0,2,1,2,2,0],[0,0,1,2,1,2,2,2],[0,0,0,1,1,2,0,0],[0,0,1,0,1,1,0,0],[0,0,0,0,2,2,0,0]],"key_steps":[[0,"\u5f00\u5c40\u7b2c\u4e00\u624b\uff1a\u6ca1\u6709\u641c\u7d22\u5386\u53f2\uff0c\u843d\u70b9\u5b8c\u5168\u7531\u7f51\u7edc\u5148\u9a8c\u51b3\u5b9a"],[4,"\u6700\u81ea\u4fe1\u7684\u4e00\u624b\uff1a86% \u7684\u6a21\u62df\u96c6\u4e2d\u5728\u4e00\u4e2a\u70b9"],[12,"\u641c\u7d22\u4fee\u6b63\u5148\u9a8c\u6700\u591a\u7684\u4e00\u624b\uff1a\u9996\u9009\u70b9\u6982\u7387\u4ece 0.07 \u62ac\u5230 0.62"],[25,"\u6700\u4e0d\u81ea\u4fe1\u7684\u4e00\u624b\uff1a399 \u6b21\u6a21\u62df\u53ea\u6709 19% \u843d\u5728\u9996\u9009\u70b9"],[28,"\u7ec8\u5c40\uff1a\u7b2c 29 \u624b\u7ed3\u675f"]]};
+const M = G.meta, MV = G.moves;
+const S = M.board_width, N = MV.length;
+
+const boardEl = document.getElementById('board');
+const cols = S + 1;
+boardEl.style.gridTemplateColumns = `18px repeat(${S}, 1fr)`;
+boardEl.style.gridTemplateRows = `18px repeat(${S}, 1fr)`;
+
+const cellAt = {};
+for (let hr = 0; hr <= S; hr++) {
+  for (let cc = 0; cc <= S; cc++) {
+    const d = document.createElement('div');
+    const isLabRow = hr === 0, isLabCol = cc === 0;
+    d.className = 'cell';
+    if (isLabRow || isLabCol) d.classList.add('lab');
+    else {
+      if (cc === S) d.classList.add('edge-r');
+      if (hr === S) d.classList.add('edge-b');
+    }
+    if (isLabRow && cc > 0) d.textContent = String(cc - 1);
+    if (isLabCol && hr > 0) d.textContent = String(S - hr);
+    boardEl.appendChild(d);
+    if (!isLabRow && !isLabCol) cellAt[`${hr},${cc}`] = d;
+  }
+}
+
+MV.forEach((m, i) => {
+  const cell = cellAt[`${S - m.h},${m.w + 1}`];
+  const st = document.createElement('div');
+  st.className = 'stone ' + (m.player === 1 ? 'p1' : 'p2');
+  st.id = 'st' + i;
+  cell.appendChild(st);
+});
+
+const candEls = [];
+function renderCands(i) {
+  candEls.forEach(e => e.remove());
+  candEls.length = 0;
+  if (i < 0 || i >= N) return;
+  const m = MV[i];
+  const maxP = Math.max(...m.search.map(p => p[1]), 0.001);
+  m.search.forEach(([mv, p], k) => {
+    const h = Math.floor(mv / S), w = mv % S;
+    const cell = cellAt[`${S - h},${w + 1}`];
+    if (!cell) return;
+    const s = document.createElement('div');
+    const size = 26 + 46 * Math.sqrt(p / maxP);
+    s.className = 'cand' + (k === 0 ? ' best' : '');
+    s.style.width = size + '%';
+    s.style.height = size + '%';
+    s.style.left = (50 - size / 2) + '%';
+    s.style.top = (50 - size / 2) + '%';
+    s.textContent = p >= 0.02 ? Math.round(p * 100) + '' : '';
+    cell.appendChild(s);
+    candEls.push(s);
+  });
+}
+
+function fmt(v, d) { return v === null || v === undefined ? '—' : v.toFixed(d === undefined ? 3 : d); }
+
+function show(i) {
+  for (let k = 0; k < N; k++) {
+    const st = document.getElementById('st' + k);
+    st.classList.toggle('on', k <= i);
+    st.classList.toggle('last', k === i);
+  }
+  const m = i >= 0 ? MV[i] : null;
+  document.getElementById('ply').textContent = i >= 0 ? (i + 1) : '—';
+  const who = document.getElementById('who');
+  if (m) {
+    who.innerHTML = `<span class="dot" style="background:${m.player===1?'var(--p1)':'var(--p2)'}"></span>`
+      + (m.player === 1 ? '先手' : '后手');
+    document.getElementById('pos2').textContent = `(${m.w}, ${m.h})`;
+    document.getElementById('nv').textContent = fmt(m.net_value);
+    document.getElementById('rq').textContent = fmt(m.root_q);
+    document.getElementById('cf').textContent = (m.confidence * 100).toFixed(1) + '%';
+    document.getElementById('rv').textContent = m.root_visits;
+
+    const cmp = document.getElementById('cmp');
+    cmp.querySelectorAll('.row').forEach(e => e.remove());
+    const priorMap = Object.fromEntries(m.prior);
+    const rows = m.search;
+    rows.forEach(([mv, p], k) => {
+      const h = Math.floor(mv / S), w = mv % S;
+      const pv = priorMap[mv] || 0;
+      const mk = (v, color) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'bar';
+        const bar = document.createElement('i');
+        bar.style.width = Math.max(1.2, v * 100) + '%';
+        bar.style.background = color;
+        const sp = document.createElement('span');
+        sp.textContent = Math.round(v * 100) + '%';
+        wrap.appendChild(bar); wrap.appendChild(sp);
+        return wrap;
+      };
+      const a = document.createElement('div');
+      a.className = 'pos row';
+      a.style.gridColumn = '1';
+      a.textContent = `(${w},${h})`;
+      const b = mk(pv, 'var(--prior)');
+      b.classList.add('row');
+      const c = mk(p, 'var(--accent)');
+      c.classList.add('row');
+      cmp.appendChild(a); cmp.appendChild(b); cmp.appendChild(c);
+    });
+  }
+  document.getElementById('slider').value = i;
+  document.getElementById('pos').textContent = `${i + 1} / ${N}`;
+  renderCands(i);
+  document.querySelectorAll('.key').forEach(el => {
+    el.classList.toggle('active', Number(el.dataset.i) === i);
+  });
+  document.getElementById('prev').disabled = i <= 0;
+  document.getElementById('first').disabled = i <= 0;
+  document.getElementById('next').disabled = i >= N - 1;
+  document.getElementById('last').disabled = i >= N - 1;
+}
+
+let cur = 0;
+document.getElementById('slider').max = N - 1;
+document.getElementById('slider').addEventListener('input', e => { stop(); show(Number(e.target.value)); });
+document.getElementById('prev').onclick = () => { stop(); show(Math.max(0, cur - 1)); };
+document.getElementById('next').onclick = () => { stop(); show(Math.min(N - 1, cur + 1)); };
+document.getElementById('first').onclick = () => { stop(); show(0); };
+document.getElementById('last').onclick = () => { stop(); show(N - 1); };
+
+let timer = null;
+function stop() { if (timer) { clearInterval(timer); timer = null; } document.getElementById('play').textContent = '播放'; }
+document.getElementById('play').onclick = () => {
+  if (timer) { stop(); return; }
+  document.getElementById('play').textContent = '暂停';
+  if (cur >= N - 1) show(0);
+  timer = setInterval(() => {
+    if (cur >= N - 1) { stop(); return; }
+    show(cur + 1);
+  }, 900);
+};
+
+const keysEl = document.getElementById('keys');
+G.key_steps.forEach(([i, reason]) => {
+  const m = MV[i];
+  const d = document.createElement('div');
+  d.className = 'key'; d.dataset.i = i;
+  d.innerHTML = `<div class="n">第 ${i + 1} 手 · ${m.player === 1 ? '先手' : '后手'} (${m.w}, ${m.h})</div>
+    <div class="t">${reason}</div>`;
+  d.onclick = () => { stop(); show(i); };
+  keysEl.appendChild(d);
+});
+
+const svg = document.getElementById('vcurve');
+const W = 300, H = 104, PAD = 6;
+const maxConf = Math.max(...MV.map(m => Math.max(m.confidence,
+  (m.prior.length ? m.prior[0][1] : 0))), 0.01);
+const xAt = i => PAD + (W - 2 * PAD) * (N <= 1 ? 0 : i / (N - 1));
+const poly = (yFn, color, w, dash) => {
+  const pts = MV.map((m, i) => `${xAt(i).toFixed(1)},${yFn(m, i).toFixed(1)}`).join(' ');
+  const pl = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+  pl.setAttribute('points', pts);
+  pl.setAttribute('fill', 'none');
+  pl.setAttribute('stroke', color);
+  pl.setAttribute('stroke-width', w);
+  pl.setAttribute('stroke-linejoin', 'round');
+  if (dash) pl.setAttribute('stroke-dasharray', dash);
+  svg.appendChild(pl);
+};
+const zero = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+zero.setAttribute('x1', PAD); zero.setAttribute('x2', W - PAD);
+zero.setAttribute('y1', H / 2); zero.setAttribute('y2', H / 2);
+zero.setAttribute('stroke', 'rgba(255,255,255,.18)');
+zero.setAttribute('stroke-dasharray', '3,3');
+svg.appendChild(zero);
+
+poly(m => H / 2 - (H / 2 - PAD) * Math.max(-1, Math.min(1, m.net_value)), '#5DCAA5', 1.8);
+poly(m => H - PAD - (H - 2 * PAD) * Math.min(1, m.confidence / maxConf), '#EF9F27', 1.2, '4,3');
+
+document.getElementById('sub').textContent =
+  `${M.model} · ${M.backend} · 每步 ${M.n_playout} 次模拟 · ${M.total_moves} 手 · ${M.elapsed}s`;
+document.getElementById('chips').innerHTML = [
+  ['棋盘', `${M.board_width}×${M.board_height}`],
+  ['连子', `${M.n_in_row} 连`],
+  ['结果', M.winner === -1 ? '平局' : (M.winner === 1 ? '先手胜' : '后手胜')],
+  ['c_puct', M.c_puct],
+  ['随机种子', M.seed],
+].map(([k, v]) => `<div class="chip">${k} <b>${v}</b></div>`).join('');
+
+show(0);
+</script>
+</body>
+</html>

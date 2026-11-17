@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>修复后模型 · 8×8 连五自对弈 · AlphaZero-Gomoku</title>
+<style>
+:root{
+  --bg:#141414; --card:#1c1c1c; --card2:#212120; --line:rgba(255,255,255,.09);
+  --fg:#e8e8e6; --dim:#9a9a96; --dim2:#6f6f6b;
+  --p1:#F0997B; --p2:#85B7EB; --prior:#6f6f6b; --accent:#EF9F27; --teal:#5DCAA5;
+  --board:#1a1a19;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Noto Sans CJK SC","Source Han Sans CN","PingFang SC",system-ui,sans-serif;
+  font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:36px 24px 64px}
+h1{font-size:22px;font-weight:500;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:12.5px;margin:0 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{background:var(--card);border:.5px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-size:12px;color:var(--dim)}
+.chip b{color:var(--fg);font-weight:500}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+@media(max-width:820px){.layout{grid-template-columns:1fr}}
+.boardwrap{background:var(--card);border:.5px solid var(--line);border-radius:14px;padding:16px}
+#board{display:grid;gap:0;width:100%;aspect-ratio:1;user-select:none}
+.cell{position:relative;border-right:.5px solid rgba(255,255,255,.055);
+  border-bottom:.5px solid rgba(255,255,255,.055)}
+.cell.edge-r{border-right:none}.cell.edge-b{border-bottom:none}
+.lab{display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--dim2);font-variant-numeric:tabular-nums}
+.stone{position:absolute;inset:8%;border-radius:50%;opacity:0;transform:scale(.4);
+  transition:opacity .18s ease,transform .18s ease}
+.stone.on{opacity:1;transform:scale(1)}
+.stone.p1{background:var(--p1)}
+.stone.p2{background:var(--p2)}
+.stone.last{box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 0 4px rgba(0,0,0,.35)}
+.cand{position:absolute;border-radius:50%;background:rgba(239,159,39,.20);
+  border:1px solid rgba(239,159,39,.55);display:flex;align-items:center;
+  justify-content:center;font-size:9.5px;color:#F5C97A;
+  font-variant-numeric:tabular-nums;transition:opacity .15s}
+.cand.hide{opacity:0}
+.cand.best{border-width:1.5px;border-color:var(--accent);background:rgba(239,159,39,.34);color:#FFD79A}
+.side{display:flex;flex-direction:column;gap:14px}
+.panel{background:var(--card);border:.5px solid var(--line);border-radius:12px;padding:15px 16px}
+.panel h3{font-size:12px;font-weight:400;color:var(--dim);margin:0 0 10px}
+.now{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.now .ply{font-size:26px;font-weight:500;letter-spacing:-.02em}
+.now .who{font-size:12.5px;color:var(--dim)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:12.5px}
+.kv dt{color:var(--dim)}
+.kv dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.cmp{display:grid;grid-template-columns:44px 1fr 1fr;gap:5px 8px;align-items:center;font-size:11.5px}
+.cmp .hd{color:var(--dim2);font-size:10.5px;padding-bottom:2px}
+.cmp .pos{color:var(--dim);font-variant-numeric:tabular-nums}
+.bar{position:relative;height:13px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;border-radius:3px;display:block}
+.bar span{position:absolute;inset:0;display:flex;align-items:center;
+  padding-left:4px;font-size:9.5px;color:#dcdcd8;font-variant-numeric:tabular-nums}
+.ctrl{display:flex;align-items:center;gap:8px;margin-top:16px}
+button{background:var(--card2);color:var(--fg);border:.5px solid var(--line);
+  border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
+button:hover{border-color:rgba(255,255,255,.25)}
+button:disabled{opacity:.35;cursor:default}
+input[type=range]{flex:1;accent-color:var(--accent)}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:26px}
+.key{background:var(--card);border:.5px solid var(--line);border-radius:10px;
+  padding:11px 13px;cursor:pointer;transition:border-color .15s}
+.key:hover{border-color:rgba(239,159,39,.5)}
+.key.active{border-color:var(--accent)}
+.key .n{font-size:11px;color:var(--dim2);margin-bottom:3px}
+.key .t{font-size:12.5px;line-height:1.45}
+h2{font-size:13px;font-weight:500;color:var(--dim);margin:32px 0 10px;
+  letter-spacing:.02em}
+#vcurve{width:100%;height:86px;display:block}
+.vlegend{display:flex;gap:14px;font-size:11px;color:var(--dim);margin-top:6px}
+.vlegend i{display:inline-block;width:12px;height:2px;vertical-align:middle;margin-right:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>修复后模型 · 8×8 连五自对弈</h1>
+  <p class="sub" id="sub"></p>
+  <div class="chips" id="chips"></div>
+
+  <div class="layout">
+    <div>
+      <div class="boardwrap"><div id="board"></div></div>
+      <div class="ctrl">
+        <button id="first">⏮</button>
+        <button id="prev">◀</button>
+        <button id="play">播放</button>
+        <button id="next">▶</button>
+        <button id="last">⏭</button>
+        <input type="range" id="slider" min="0" max="0" value="0">
+        <span id="pos" style="font-size:12px;color:var(--dim);min-width:56px;text-align:right"></span>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <div class="now">
+          <span class="ply" id="ply">1</span>
+          <span class="who" id="who"></span>
+        </div>
+        <dl class="kv">
+          <dt>落点</dt><dd id="pos2">—</dd>
+          <dt>网络价值 v</dt><dd id="nv">—</dd>
+          <dt>搜索 Q</dt><dd id="rq">—</dd>
+          <dt>首选点访问占比</dt><dd id="cf">—</dd>
+          <dt>搜索量</dt><dd id="rv">—</dd>
+        </dl>
+      </div>
+
+      <div class="panel">
+        <h3>先验 vs 搜索后的概率</h3>
+        <div class="cmp" id="cmp">
+          <div class="hd"></div><div class="hd">网络先验</div><div class="hd">MCTS 搜索</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>网络价值 v 与概率集中度</h3>
+        <svg id="vcurve" viewBox="0 0 300 104" preserveAspectRatio="none"></svg>
+        <div class="vlegend">
+          <span><i style="background:var(--teal)"></i>价值 v（左轴 −1…+1）</span>
+          <span><i style="background:var(--accent)"></i>首选访问占比</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>关键节点</h2>
+  <div class="keys" id="keys"></div>
+</div>
+
+<script>
+const G = {"meta":{"model":"fixed8_policy.model","backend":"PyTorch 2.15.0+cpu (CPU)","board_width":8,"board_height":8,"n_in_row":5,"n_playout":200,"c_puct":5.0,"seed":7,"winner":1,"total_moves":15,"elapsed":1.45},"moves":[{"i":0,"player":1,"move":56,"h":7,"w":0,"net_value":-0.033,"root_q":0.254,"root_visits":199,"prior":[[36,0.0207],[39,0.0205],[24,0.0203],[31,0.0201],[35,0.0196]],"search":[[12,0.0452],[34,0.0452],[56,0.0452],[29,0.0402],[11,0.0302]],"confidence":0.0452,"elapsed":0.093},{"i":1,"player":2,"move":63,"h":7,"w":7,"net_value":-0.0081,"root_q":0.237,"root_visits":199,"prior":[[26,0.0211],[19,0.0201],[36,0.0196],[33,0.0191],[21,0.0189]],"search":[[63,0.3317],[19,0.0854],[29,0.0603],[26,0.0553],[33,0.0302]],"confidence":0.3317,"elapsed":0.087},{"i":2,"player":1,"move":44,"h":5,"w":4,"net_value":0.1491,"root_q":0.2938,"root_visits":199,"prior":[[36,0.0254],[3,0.0226],[4,0.0221],[24,0.0218],[35,0.0216]],"search":[[44,0.1508],[62,0.1156],[27,0.1005],[26,0.0955],[35,0.0955]],"confidence":0.1508,"elapsed":0.19},{"i":3,"player":2,"move":29,"h":3,"w":5,"net_value":0.1877,"root_q":0.2957,"root_visits":199,"prior":[[21,0.0227],[54,0.0216],[29,0.0213],[28,0.0206],[33,0.0198]],"search":[[29,0.3116],[33,0.1457],[36,0.0955],[50,0.0653],[49,0.0251]],"confidence":0.3116,"elapsed":0.102},{"i":4,"player":1,"move":28,"h":3,"w":4,"net_value":0.3251,"root_q":0.3781,"root_visits":199,"prior":[[35,0.024],[36,0.0239],[4,0.0229],[3,0.0228],[28,0.0224]],"search":[[28,0.407],[36,0.3015],[0,0.005],[1,0.005],[2,0.005]],"confidence":0.407,"elapsed":0.122},{"i":5,"player":2,"move":26,"h":3,"w":2,"net_value":0.0808,"root_q":0.1638,"root_visits":199,"prior":[[26,0.0272],[37,0.024],[38,0.0222],[54,0.021],[50,0.0208]],"search":[[26,0.2915],[50,0.196],[33,0.1759],[37,0.0452],[51,0.0151]],"confidence":0.2915,"elapsed":0.085},{"i":6,"player":1,"move":62,"h":7,"w":6,"net_value":0.5338,"root_q":0.4792,"root_visits":199,"prior":[[36,0.0241],[46,0.0225],[43,0.0219],[50,0.0216],[3,0.0211]],"search":[[62,0.3618],[36,0.3417],[39,0.0151],[55,0.0151],[0,0.005]],"confidence":0.3618,"elapsed":0.089},{"i":7,"player":2,"move":38,"h":4,"w":6,"net_value":-0.0806,"root_q":0.0638,"root_visits":199,"prior":[[38,0.0303],[46,0.0262],[50,0.025],[10,0.0242],[53,0.0226]],"search":[[38,0.2915],[46,0.1859],[33,0.1156],[50,0.1005],[49,0.0302]],"confidence":0.2915,"elapsed":0.089},{"i":8,"player":1,"move":46,"h":5,"w":6,"net_value":0.575,"root_q":0.4387,"root_visits":199,"prior":[[46,0.03],[52,0.0252],[11,0.0239],[24,0.0237],[10,0.0228]],"search":[[46,0.3518],[11,0.3065],[52,0.0854],[0,0.005],[1,0.005]],"confidence":0.3518,"elapsed":0.092},{"i":9,"player":2,"move":50,"h":6,"w":2,"net_value":0.1361,"root_q":0.1813,"root_visits":199,"prior":[[50,0.0258],[10,0.0256],[53,0.0248],[22,0.0246],[43,0.0229]],"search":[[50,0.3317],[53,0.2462],[49,0.0854],[51,0.0804],[0,0.005]],"confidence":0.3317,"elapsed":0.089},{"i":10,"player":1,"move":52,"h":6,"w":4,"net_value":0.2774,"root_q":0.3937,"root_visits":199,"prior":[[43,0.027],[52,0.0254],[53,0.0253],[11,0.0243],[3,0.0233]],"search":[[52,0.3065],[11,0.2111],[27,0.1005],[43,0.0754],[41,0.0503]],"confidence":0.3065,"elapsed":0.086},{"i":11,"player":2,"move":53,"h":6,"w":5,"net_value":0.2732,"root_q":0.3212,"root_visits":199,"prior":[[22,0.0331],[43,0.0279],[49,0.0272],[53,0.027],[10,0.0246]],"search":[[53,0.3216],[51,0.2613],[43,0.0955],[49,0.0452],[22,0.0352]],"confidence":0.3216,"elapsed":0.088},{"i":12,"player":1,"move":36,"h":4,"w":4,"net_value":0.4239,"root_q":0.4477,"root_visits":199,"prior":[[43,0.0336],[36,0.0321],[3,0.0289],[2,0.0261],[27,0.0249]],"search":[[36,0.3618],[27,0.201],[43,0.1709],[3,0.0251],[0,0.005]],"confidence":0.3618,"elapsed":0.09},{"i":13,"player":2,"move":43,"h":5,"w":3,"net_value":0.573,"root_q":-0.0719,"root_visits":199,"prior":[[22,0.0481],[43,0.0303],[49,0.0287],[41,0.0264],[54,0.0238]],"search":[[43,0.2261],[22,0.2111],[41,0.1558],[49,0.1357],[54,0.0402]],"confidence":0.2261,"elapsed":0.083},{"i":14,"player":1,"move":60,"h":7,"w":4,"net_value":0.8199,"root_q":1.0,"root_visits":199,"prior":[[22,0.032],[3,0.0319],[41,0.0292],[2,0.0287],[49,0.0233]],"search":[[60,0.8593],[2,0.005],[3,0.005],[4,0.005],[5,0.005]],"confidence":0.8593,"elapsed":0.072}],"final_board":[[1,0,0,0,1,0,1,2],[0,0,2,0,1,2,0,0],[0,0,0,2,1,0,1,0],[0,0,0,0,1,0,2,0],[0,0,2,0,1,2,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],"key_steps":[[0,"\u5f00\u5c40\u7b2c\u4e00\u624b\uff1a\u6ca1\u6709\u641c\u7d22\u5386\u53f2\uff0c\u843d\u70b9\u5b8c\u5168\u7531\u7f51\u7edc\u5148\u9a8c\u51b3\u5b9a"],[3,"\u4e2d\u76d8\u7b2c 4 \u624b\uff1a31% \u7684\u6a21\u62df\u843d\u5728\u9996\u9009\u70b9\uff0c\u7f51\u7edc\u4ef7\u503c v = 0.188"],[7,"\u4e2d\u76d8\u7b2c 8 \u624b\uff1a29% \u7684\u6a21\u62df\u843d\u5728\u9996\u9009\u70b9\uff0c\u7f51\u7edc\u4ef7\u503c v = -0.081"],[10,"\u4e2d\u76d8\u7b2c 11 \u624b\uff1a31% \u7684\u6a21\u62df\u843d\u5728\u9996\u9009\u70b9\uff0c\u7f51\u7edc\u4ef7\u503c v = 0.277"],[14,"\u641c\u7d22\u4fee\u6b63\u5148\u9a8c\u6700\u591a\u7684\u4e00\u624b\uff1a\u9996\u9009\u70b9\u6982\u7387\u4ece 0.00 \u62ac\u5230 0.86"]]};
+const M = G.meta, MV = G.moves;
+const S = M.board_width, N = MV.length;
+
+const boardEl = document.getElementById('board');
+const cols = S + 1;
+boardEl.style.gridTemplateColumns = `18px repeat(${S}, 1fr)`;
+boardEl.style.gridTemplateRows = `18px repeat(${S}, 1fr)`;
+
+const cellAt = {};
+for (let hr = 0; hr <= S; hr++) {
+  for (let cc = 0; cc <= S; cc++) {
+    const d = document.createElement('div');
+    const isLabRow = hr === 0, isLabCol = cc === 0;
+    d.className = 'cell';
+    if (isLabRow || isLabCol) d.classList.add('lab');
+    else {
+      if (cc === S) d.classList.add('edge-r');
+      if (hr === S) d.classList.add('edge-b');
+    }
+    if (isLabRow && cc > 0) d.textContent = String(cc - 1);
+    if (isLabCol && hr > 0) d.textContent = String(S - hr);
+    boardEl.appendChild(d);
+    if (!isLabRow && !isLabCol) cellAt[`${hr},${cc}`] = d;
+  }
+}
+
+MV.forEach((m, i) => {
+  const cell = cellAt[`${S - m.h},${m.w + 1}`];
+  const st = document.createElement('div');
+  st.className = 'stone ' + (m.player === 1 ? 'p1' : 'p2');
+  st.id = 'st' + i;
+  cell.appendChild(st);
+});
+
+const candEls = [];
+function renderCands(i) {
+  candEls.forEach(e => e.remove());
+  candEls.length = 0;
+  if (i < 0 || i >= N) return;
+  const m = MV[i];
+  const maxP = Math.max(...m.search.map(p => p[1]), 0.001);
+  m.search.forEach(([mv, p], k) => {
+    const h = Math.floor(mv / S), w = mv % S;
+    const cell = cellAt[`${S - h},${w + 1}`];
+    if (!cell) return;
+    const s = document.createElement('div');
+    const size = 26 + 46 * Math.sqrt(p / maxP);
+    s.className = 'cand' + (k === 0 ? ' best' : '');
+    s.style.width = size + '%';
+    s.style.height = size + '%';
+    s.style.left = (50 - size / 2) + '%';
+    s.style.top = (50 - size / 2) + '%';
+    s.textContent = p >= 0.02 ? Math.round(p * 100) + '' : '';
+    cell.appendChild(s);
+    candEls.push(s);
+  });
+}
+
+function fmt(v, d) { return v === null || v === undefined ? '—' : v.toFixed(d === undefined ? 3 : d); }
+
+function show(i) {
+  for (let k = 0; k < N; k++) {
+    const st = document.getElementById('st' + k);
+    st.classList.toggle('on', k <= i);
+    st.classList.toggle('last', k === i);
+  }
+  const m = i >= 0 ? MV[i] : null;
+  document.getElementById('ply').textContent = i >= 0 ? (i + 1) : '—';
+  const who = document.getElementById('who');
+  if (m) {
+    who.innerHTML = `<span class="dot" style="background:${m.player===1?'var(--p1)':'var(--p2)'}"></span>`
+      + (m.player === 1 ? '先手' : '后手');
+    document.getElementById('pos2').textContent = `(${m.w}, ${m.h})`;
+    document.getElementById('nv').textContent = fmt(m.net_value);
+    document.getElementById('rq').textContent = fmt(m.root_q);
+    document.getElementById('cf').textContent = (m.confidence * 100).toFixed(1) + '%';
+    document.getElementById('rv').textContent = m.root_visits;
+
+    const cmp = document.getElementById('cmp');
+    cmp.querySelectorAll('.row').forEach(e => e.remove());
+    const priorMap = Object.fromEntries(m.prior);
+    const rows = m.search;
+    rows.forEach(([mv, p], k) => {
+      const h = Math.floor(mv / S), w = mv % S;
+      const pv = priorMap[mv] || 0;
+      const mk = (v, color) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'bar';
+        const bar = document.createElement('i');
+        bar.style.width = Math.max(1.2, v * 100) + '%';
+        bar.style.background = color;
+        const sp = document.createElement('span');
+        sp.textContent = Math.round(v * 100) + '%';
+        wrap.appendChild(bar); wrap.appendChild(sp);
+        return wrap;
+      };
+      const a = document.createElement('div');
+      a.className = 'pos row';
+      a.style.gridColumn = '1';
+      a.textContent = `(${w},${h})`;
+      const b = mk(pv, 'var(--prior)');
+      b.classList.add('row');
+      const c = mk(p, 'var(--accent)');
+      c.classList.add('row');
+      cmp.appendChild(a); cmp.appendChild(b); cmp.appendChild(c);
+    });
+  }
+  document.getElementById('slider').value = i;
+  document.getElementById('pos').textContent = `${i + 1} / ${N}`;
+  renderCands(i);
+  document.querySelectorAll('.key').forEach(el => {
+    el.classList.toggle('active', Number(el.dataset.i) === i);
+  });
+  document.getElementById('prev').disabled = i <= 0;
+  document.getElementById('first').disabled = i <= 0;
+  document.getElementById('next').disabled = i >= N - 1;
+  document.getElementById('last').disabled = i >= N - 1;
+}
+
+let cur = 0;
+document.getElementById('slider').max = N - 1;
+document.getElementById('slider').addEventListener('input', e => { stop(); show(Number(e.target.value)); });
+document.getElementById('prev').onclick = () => { stop(); show(Math.max(0, cur - 1)); };
+document.getElementById('next').onclick = () => { stop(); show(Math.min(N - 1, cur + 1)); };
+document.getElementById('first').onclick = () => { stop(); show(0); };
+document.getElementById('last').onclick = () => { stop(); show(N - 1); };
+
+let timer = null;
+function stop() { if (timer) { clearInterval(timer); timer = null; } document.getElementById('play').textContent = '播放'; }
+document.getElementById('play').onclick = () => {
+  if (timer) { stop(); return; }
+  document.getElementById('play').textContent = '暂停';
+  if (cur >= N - 1) show(0);
+  timer = setInterval(() => {
+    if (cur >= N - 1) { stop(); return; }
+    show(cur + 1);
+  }, 900);
+};
+
+const keysEl = document.getElementById('keys');
+G.key_steps.forEach(([i, reason]) => {
+  const m = MV[i];
+  const d = document.createElement('div');
+  d.className = 'key'; d.dataset.i = i;
+  d.innerHTML = `<div class="n">第 ${i + 1} 手 · ${m.player === 1 ? '先手' : '后手'} (${m.w}, ${m.h})</div>
+    <div class="t">${reason}</div>`;
+  d.onclick = () => { stop(); show(i); };
+  keysEl.appendChild(d);
+});
+
+const svg = document.getElementById('vcurve');
+const W = 300, H = 104, PAD = 6;
+const maxConf = Math.max(...MV.map(m => Math.max(m.confidence,
+  (m.prior.length ? m.prior[0][1] : 0))), 0.01);
+const xAt = i => PAD + (W - 2 * PAD) * (N <= 1 ? 0 : i / (N - 1));
+const poly = (yFn, color, w, dash) => {
+  const pts = MV.map((m, i) => `${xAt(i).toFixed(1)},${yFn(m, i).toFixed(1)}`).join(' ');
+  const pl = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+  pl.setAttribute('points', pts);
+  pl.setAttribute('fill', 'none');
+  pl.setAttribute('stroke', color);
+  pl.setAttribute('stroke-width', w);
+  pl.setAttribute('stroke-linejoin', 'round');
+  if (dash) pl.setAttribute('stroke-dasharray', dash);
+  svg.appendChild(pl);
+};
+const zero = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+zero.setAttribute('x1', PAD); zero.setAttribute('x2', W - PAD);
+zero.setAttribute('y1', H / 2); zero.setAttribute('y2', H / 2);
+zero.setAttribute('stroke', 'rgba(255,255,255,.18)');
+zero.setAttribute('stroke-dasharray', '3,3');
+svg.appendChild(zero);
+
+poly(m => H / 2 - (H / 2 - PAD) * Math.max(-1, Math.min(1, m.net_value)), '#5DCAA5', 1.8);
+poly(m => H - PAD - (H - 2 * PAD) * Math.min(1, m.confidence / maxConf), '#EF9F27', 1.2, '4,3');
+
+document.getElementById('sub').textContent =
+  `${M.model} · ${M.backend} · 每步 ${M.n_playout} 次模拟 · ${M.total_moves} 手 · ${M.elapsed}s`;
+document.getElementById('chips').innerHTML = [
+  ['棋盘', `${M.board_width}×${M.board_height}`],
+  ['连子', `${M.n_in_row} 连`],
+  ['结果', M.winner === -1 ? '平局' : (M.winner === 1 ? '先手胜' : '后手胜')],
+  ['c_puct', M.c_puct],
+  ['随机种子', M.seed],
+].map(([k, v]) => `<div class="chip">${k} <b>${v}</b></div>`).join('');
+
+show(0);
+</script>
+</body>
+</html>
