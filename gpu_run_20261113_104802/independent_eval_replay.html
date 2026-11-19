@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlphaZero 五子棋复测棋谱</title>
+<style>
+:root { color-scheme: light; --paper:#f8f6ee; --ink:#1b2d27; --muted:#526660; --green:#245f4f; --rule:#cbd4cc; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 system-ui,sans-serif; }
+main { max-width:1050px; margin:0 auto; padding: clamp(20px,4vw,48px); }
+h1 { margin:0 0 4px; font-size:clamp(27px,5vw,42px); letter-spacing:-.025em; }
+p { margin:0; }
+.subtitle, .legend, .game-meta { color:var(--muted); }
+select, button { font:inherit; border:1px solid var(--rule); border-radius:6px; padding:8px 12px; background:#fff; color:var(--ink); }
+button { min-height:43px; }
+button:disabled { opacity:.42; }
+button:focus-visible, select:focus-visible, input:focus-visible { outline:2px solid var(--green); outline-offset:2px; }
+.layout { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(250px,.75fr); gap:clamp(20px,5vw,46px); align-items:start; margin-top:24px; }
+.board { background:#e5cb9b; border:1px solid #d2b488; border-radius:12px; width:100%; height:auto; display:block; }
+.controls { margin-top:12px; display:grid; gap:14px; }
+.game-picker { display:grid; gap:5px; }
+.game-picker label { font-weight:620; }
+.game-meta { border-block:1px solid var(--rule); padding:14px 0; }
+.step { display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+.step output { font-variant-numeric:tabular-nums; }
+input[type=range] { width:100%; margin:4px 0 0; accent-color:var(--green); }
+.buttons { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; }
+.legend { margin-top:5px; }
+.stone { display:inline-block; vertical-align:middle; width:13px; height:13px; border-radius:50%; margin-right:6px; border:1px solid #575042; }
+.black { background:#202925; }
+.white { background:#fffcf1; }
+@media (max-width:660px) {
+  .layout { grid-template-columns:1fr; gap:10px; }
+  .controls { margin-top:0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>AlphaZero 五子棋复测棋谱</h1>
+  <p class="subtitle" id="summary"></p>
+  <div class="layout">
+    <svg id="board" class="board" viewBox="0 0 500 500" role="img" aria-label="10×10 棋盘">
+      <g id="grid" aria-hidden="true"></g>
+      <g id="stones" aria-hidden="true"></g>
+    </svg>
+    <section aria-label="棋谱回放" class="controls">
+      <div class="game-picker">
+        <label for="game">选择对局</label>
+        <select id="game"></select>
+      </div>
+      <p class="game-meta" id="game-meta"></p>
+      <div>
+        <div class="step"><label for="step">落子进度</label><output id="progress" for="step"></output></div>
+        <input type="range" min="0" value="0" id="step">
+      </div>
+      <div class="buttons">
+        <button type="button" id="undo">上一手</button>
+        <button type="button" id="next">下一手</button>
+        <button type="button" id="end">看终局</button>
+      </div>
+      <div class="legend">
+        <p><span class="stone black"></span>黑棋先手　<span class="stone white"></span>白棋后手</p>
+        <p>圆点标记最新落子。终局绿色线标记连五。</p>
+      </div>
+    </section>
+  </div>
+</main>
+<script id="data" type="application/json">{"summary":{"overall":{"games":30,"wins":24,"draws":0,"losses":6,"win_rate":0.8,"score_rate":0.8},"model_first":{"games":15,"wins":14,"draws":0,"losses":1,"win_rate":0.9333333333333333,"score_rate":0.9333333333333333},"model_second":{"games":15,"wins":10,"draws":0,"losses":5,"win_rate":0.6666666666666666,"score_rate":0.6666666666666666}},"games":[{"game":1,"seed":2026111901,"model_first":true,"outcome":"win","moves":[11,67,44,36,26,54,45,35,46,66,43,72,42],"seconds":86.037},{"game":2,"seed":2026111902,"model_first":false,"outcome":"loss","moves":[43,34,33,53,54,65,32,21,44,22,42,41,46,45,24,15,51,60,56,35,55,25,5,23,66,20,77],"seconds":203.588},{"game":3,"seed":2026111903,"model_first":true,"outcome":"win","moves":[11,36,27,45,54,46,44,16,26,66,24,76,56,55,25,15,28],"seconds":112.261},{"game":4,"seed":2026111904,"model_first":false,"outcome":"loss","moves":[33,35,34,46,53,24,13,57,68,43,31,32,22,40,44,54,11,65,0],"seconds":132.008},{"game":5,"seed":2026111905,"model_first":true,"outcome":"win","moves":[11,46,44,36,26,55,35,64,17,8,53],"seconds":69.069},{"game":6,"seed":2026111906,"model_first":false,"outcome":"loss","moves":[46,35,44,43,45,47,34,56,54,64,36,27,63,72,14,24,65,38,12,29,87,76,23,1,41,5,13,16,49,11,85,25,32,50,86,26,28,88,52,74,83,84,42,22,73,30,53,93,55,75,51],"seconds":376.706},{"game":7,"seed":2026111907,"model_first":true,"outcome":"win","moves":[11,53,55,3,73,64,75,74,54,34,45,35,65,85,36,52,27,18,63],"seconds":132.544},{"game":8,"seed":2026111908,"model_first":false,"outcome":"win","moves":[53,64,35,15,44,62,54,63,26,17,46,61,65,60],"seconds":99.284},{"game":9,"seed":2026111909,"model_first":true,"outcome":"win","moves":[11,55,44,45,22,64,33,0,73,25,35,3,53,63,62,26,71],"seconds":118.061},{"game":10,"seed":2026111910,"model_first":false,"outcome":"loss","moves":[51,84,42,48,31,53,41,21,33,24,32,34,61,71,44,22,23,14,45,43,55,4,66,77,35,25,16,65,63,54,74,52,76,26,56,27,28,37,15,59,46,86,36],"seconds":338.67},{"game":11,"seed":2026111911,"model_first":true,"outcome":"win","moves":[11,45,54,75,55,23,53,24,56,37,57],"seconds":73.82},{"game":12,"seed":2026111912,"model_first":false,"outcome":"win","moves":[48,34,47,46,87,84,65,56,66,64,54,76,43,32,57,67,45,75,53,73,27,74,33,72],"seconds":170.803},{"game":13,"seed":2026111913,"model_first":true,"outcome":"win","moves":[11,64,44,62,22,33,63,37,42,55,46,35,45,43,47,48,34,54,56,67,23,12,24,65,21,78,20],"seconds":194.296},{"game":14,"seed":2026111914,"model_first":false,"outcome":"loss","moves":[39,35,64,34,32,84,66,65,54,36,37,33,45,44,43,21,55,77,53,52,46,28,73],"seconds":169.868},{"game":15,"seed":2026111915,"model_first":true,"outcome":"win","moves":[11,56,44,15,55,65,66,33,77,88,24,83,74,32,34,54,14,4,43,45,52,63,61,25,70],"seconds":175.654},{"game":16,"seed":2026111916,"model_first":false,"outcome":"win","moves":[63,46,36,34,70,43,15,52,45,25,16,61],"seconds":88.026},{"game":17,"seed":2026111917,"model_first":true,"outcome":"win","moves":[11,33,44,37,77,58,55,35,66,88,36,4,46,15,56,26,76],"seconds":119.032},{"game":18,"seed":2026111918,"model_first":false,"outcome":"win","moves":[46,35,56,51,26,36,23,34,25,33,13,37],"seconds":88.319},{"game":19,"seed":2026111919,"model_first":true,"outcome":"loss","moves":[11,65,44,55,45,14,46,47,43,42,35,56,38,74,83,57,58,37,48,67,68,27],"seconds":147.193},{"game":20,"seed":2026111920,"model_first":false,"outcome":"win","moves":[24,35,44,34,32,36,42,37,99,38],"seconds":73.823},{"game":21,"seed":2026111921,"model_first":true,"outcome":"win","moves":[11,56,44,33,62,43,53,35,71,80,23,34,32,25,16,52,61,37,36,15,45,27,47,46,41,55,51,31,81],"seconds":215.542},{"game":22,"seed":2026111922,"model_first":false,"outcome":"win","moves":[24,35,34,14,64,44,66,53,62,26,17,65,15,45,55,46,87,43,27,42],"seconds":153.762},{"game":23,"seed":2026111923,"model_first":true,"outcome":"win","moves":[11,64,44,53,42,56,55,63,66,43,33,22,77],"seconds":87.013},{"game":24,"seed":2026111924,"model_first":false,"outcome":"win","moves":[33,35,37,46,44,24,13,57,68,51,66,55,56,65,45,54,52,43,76,32,21,86,78,67,73,64,74,75,48,97,53,85,95,87,77,88,89,84],"seconds":289.829},{"game":25,"seed":2026111925,"model_first":true,"outcome":"win","moves":[11,80,44,55,22,54,33,0,53,84,62,35,71,75,42,65,45,85,95,43,32,52,12,2,31,13,24,25,15,6,51],"seconds":206.322},{"game":26,"seed":2026111926,"model_first":false,"outcome":"win","moves":[35,46,58,85,63,65,53,43,26,44,45,54,25,76,32,87],"seconds":115.865},{"game":27,"seed":2026111927,"model_first":true,"outcome":"win","moves":[11,55,44,33,54,66,77,46,64,34,74,84,75,35,76,78,73],"seconds":116.293},{"game":28,"seed":2026111928,"model_first":false,"outcome":"win","moves":[47,56,57,53,43,34,77,67,76,45,3,23],"seconds":86.213},{"game":29,"seed":2026111929,"model_first":true,"outcome":"win","moves":[11,95,44,55,22,75,33,0,65,45,35,63,26,34,17,8,53],"seconds":115.509},{"game":30,"seed":2026111930,"model_first":false,"outcome":"win","moves":[36,34,22,43,44,52,25,61,70,47,55,33,45,35,46,32,31,13,66,23,3,53],"seconds":157.979}]}</script>
+<script>
+"use strict";
+const data = JSON.parse(document.getElementById("data").textContent);
+const gameSelect = document.getElementById("game");
+const progressSlider = document.getElementById("step");
+const board = document.getElementById("board");
+const grid = document.getElementById("grid");
+const stones = document.getElementById("stones");
+const undo = document.getElementById("undo");
+const next = document.getElementById("next");
+const end = document.getElementById("end");
+const letters = "ABCDEFGHIJ";
+const boardSize = 10;
+const interval = 46;
+const margin = 43;
+const svgNamespace = "http://www.w3.org/2000/svg";
+const point = (column, row) => [margin + column * interval, margin + (boardSize - 1 - row) * interval];
+const resultText = {win:"模型胜", draw:"和棋", loss:"纯 MCTS 胜"};
+const buildSvg = (type, attributes, label = "") => {
+  const node = document.createElementNS(svgNamespace, type);
+  for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+  if (label) node.textContent = label;
+  return node;
+};
+const line = (a, b, stroke, width) =>
+  buildSvg("line", {x1:a[0], y1:a[1], x2:b[0], y2:b[1], stroke, "stroke-width":width, "stroke-linecap":"round"});
+
+for (let i = 0; i < boardSize; i++) {
+  const [x, y] = point(i, i);
+  grid.append(line([x, margin], [x, 500 - margin], "#846948", 1.4));
+  grid.append(line([margin, y], [500 - margin, y], "#846948", 1.4));
+  grid.append(buildSvg("text", {x, y:482, "text-anchor":"middle", fill:"#5c482d", "font-size":14}, letters[i]));
+  grid.append(buildSvg("text", {x:20, y:y+5, "text-anchor":"middle", fill:"#5c482d", "font-size":14}, String(i+1)));
+}
+
+function winningRun(moves) {
+  const last = moves.at(-1);
+  const sameSide = new Set(moves.filter((_, i) => i % 2 === (moves.length - 1) % 2));
+  const col = last % boardSize;
+  const row = Math.floor(last / boardSize);
+  const inRun = (x, y) => x>=0 && x<boardSize && y>=0 && y<boardSize && sameSide.has(y*boardSize+x);
+  for (const [dx, dy] of [[1,0],[0,1],[1,1],[1,-1]]) {
+    let begin = 0, finish = 0;
+    while (inRun(col+(begin-1)*dx,row+(begin-1)*dy)) begin--;
+    while (inRun(col+(finish+1)*dx,row+(finish+1)*dy)) finish++;
+    if (finish-begin+1 >= 5) {
+      return [point(col+begin*dx,row+begin*dy), point(col+finish*dx,row+finish*dy)];
+    }
+  }
+  return null;
+}
+
+function render() {
+  const g = data.games[Number(gameSelect.value) - 1];
+  const ply = Number(progressSlider.value);
+  const finished = ply === g.moves.length;
+  stones.replaceChildren();
+  for (const [i, move] of g.moves.slice(0, ply).entries()) {
+    const [cx, cy] = point(move % boardSize, Math.floor(move / boardSize));
+    const black = i % 2 === 0;
+    stones.append(buildSvg("circle", {cx,cy,r:17,fill:black?"#202925":"#fffcf1",stroke:black?"#15201a":"#9c8a68","stroke-width":1.5}));
+  }
+  if (finished && g.outcome !== "draw") {
+    const run = winningRun(g.moves);
+    if (run) stones.append(line(run[0],run[1],"#318369",4));
+  }
+  if (ply > 0) {
+    const last = g.moves[ply-1];
+    const [cx, cy] = point(last % boardSize, Math.floor(last / boardSize));
+    stones.append(buildSvg("circle", {cx,cy,r:4.5,fill:"#db6f38"}));
+  }
+  undo.disabled = ply === 0;
+  next.disabled = finished;
+  end.disabled = finished;
+  document.getElementById("game-meta").textContent =
+    (g.model_first ? "模型执黑先手" : "模型执白后手") + " · " + resultText[g.outcome] + " · " + g.moves.length + " 手";
+  document.getElementById("progress").textContent = ply + " / " + g.moves.length;
+  board.setAttribute("aria-label","第 " + g.game + " 局，" + (finished ? "终局" : "第 " + ply + " 手") + "，" + (g.model_first ? "模型执黑" : "模型执白"));
+}
+
+function openGame() {
+  const g = data.games[Number(gameSelect.value) - 1];
+  progressSlider.max = String(g.moves.length);
+  progressSlider.value = progressSlider.max;
+  render();
+}
+function moveStep(change) {
+  progressSlider.value = String(Math.min(Number(progressSlider.max), Math.max(0, Number(progressSlider.value) + change)));
+  render();
+}
+for (const g of data.games) {
+  const opt = document.createElement("option");
+  opt.value = g.game;
+  opt.textContent = "第 " + String(g.game).padStart(2, "0") + " 局 · " + (g.model_first ? "模型先手" : "模型后手") + " · " + resultText[g.outcome];
+  gameSelect.append(opt);
+}
+const summary = data.summary.overall;
+document.getElementById("summary").textContent =
+  "10×10 连五 · 模型 400 次 / 纯 MCTS 5000 次 · " +
+  summary.games + " 局，模型 " + summary.wins + " 胜 " + summary.draws + " 和 " + summary.losses + " 负";
+gameSelect.addEventListener("change", openGame);
+progressSlider.addEventListener("input", render);
+undo.addEventListener("click", () => moveStep(-1));
+next.addEventListener("click", () => moveStep(1));
+end.addEventListener("click", () => { progressSlider.value = progressSlider.max; render(); });
+document.addEventListener("keydown", e => {
+  if (["INPUT","SELECT"].includes(e.target.tagName)) return;
+  if (e.key==="ArrowLeft") moveStep(-1);
+  if (e.key==="ArrowRight") moveStep(1);
+});
+openGame();
+</script>
+</body>
+</html>
